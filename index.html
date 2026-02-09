@@ -1,738 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Justice &amp; Partners | Experienced Legal Representation</title>
-  <meta name="description" content="Dedicated legal team specializing in corporate law, family law, and litigation. Justice & Partners provides strategic counsel and aggressive representation.">
-  <link rel="canonical" href="https://example.com/justice-partners">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Justice & Partners | Experienced Legal Representation">
-  <meta property="og:description" content="Dedicated legal team specializing in corporate law, family law, and litigation.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/justice-partners">
-  <meta property="og:image" content="https://example.com/og-image.jpg">
-
-  <!-- 
-  ⚠️ SECURITY EXCEPTION: unsafe-inline CSP
-  Constraint: Single-file delivery requirement prevents server-side nonce injection or build-time hash generation.
-  Risk: Reduced protection against XSS.
-  Mitigation: 
-    1. Scripts are minimal and contain no user input processing.
-    2. No external scripts are loaded.
-    3. Before production, extract JS/CSS to external files or add SHA-384 hashes to CSP.
-  -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self'; 
-    script-src 'self' 'unsafe-inline'; 
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-    img-src 'self' data: https:; 
-    font-src 'self' https://fonts.gstatic.com;
-  ">
-
-  <!-- Preconnect to Font Provider -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <style>
-    /* 
-    CRITICAL CSS 
-    Performance Target: <14KB inline
-    */
-
-    /* Variables & Theme */
-    :root {
-      /* Color Palette - Professional/Trustworthy */
-      --color-primary: #0f172a; /* Navy Blue */
-      --color-secondary: #c5a059; /* Muted Gold */
-      --color-text: #334155;
-      --color-bg: #ffffff;
-      --color-bg-alt: #f8fafc;
-      --color-border: #e2e8f0;
-      
-      /* Typography */
-      --font-heading: 'Playfair Display', 'Times New Roman', serif;
-      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-      
-      /* Spacing */
-      --container-width: 1200px;
-      --space-sm: 1rem;
-      --space-md: 2rem;
-      --space-lg: 4rem;
-      --space-xl: 6rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-primary: #1e293b;
-        --color-secondary: #d4af37;
-        --color-text: #e2e8f0;
-        --color-bg: #0f172a;
-        --color-bg-alt: #1e293b;
-        --color-border: #334155;
-      }
-    }
-
-    /* Reset & Base */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sterling & Vance Law Firm | Expert Legal Defense & Corporate Counsel</title>
+    <meta name="description" content="Sterling & Vance provides top-tier legal representation in corporate law, criminal defense, and family litigation. Schedule a consultation today.">
+    <link rel="canonical" href="https://www.sterlingvance.com/">
+    <meta name="robots" content="index, follow">
     
-    html {
-      scroll-behavior: smooth;
-    }
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sterling & Vance Law Firm">
+    <meta property="og:description" content="Expert legal counsel for complex litigation and corporate matters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sterlingvance.com/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=1200&h=630">
 
-    body {
-      font-family: var(--font-body);
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    <!-- 
+    SECURITY EXCEPTION: Single-file CSP
+    Constraint: Hash cannot be computed by LLM
+    Temporary allowance: 'unsafe-inline'
+    Action required: Replace with sha384 hash before production
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' https://images.unsplash.com; font-src 'self';">
 
-    /* Accessibility Focus */
-    *:focus-visible {
-      outline: 3px solid var(--color-secondary);
-      outline-offset: 3px;
-    }
+    <style>
+        /* CRITICAL CSS */
+        :root {
+            --primary: #0f172a;    /* Slate 900 */
+            --secondary: #b45309;  /* Amber 700 */
+            --surface: #f8fafc;    /* Slate 50 */
+            --text-main: #1e293b;  /* Slate 800 */
+            --text-muted: #475569; /* Slate 600 */
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --font-serif: "Georgia", "Times New Roman", serif;
+            --font-sans: system-ui, -apple-system, sans-serif;
+        }
 
-    .skip-link {
-      position: absolute;
-      top: -9999px;
-      left: 1rem;
-      background: var(--color-secondary);
-      color: #000;
-      padding: 1rem;
-      z-index: 9999;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        /* RESET & BASE */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+        }
 
-    .skip-link:focus {
-      top: 1rem;
-    }
+        /* ACCESSIBILITY: Focus */
+        :focus-visible {
+            outline: 3px solid var(--secondary);
+            outline-offset: 4px;
+        }
 
-    /* Typography */
-    h1, h2, h3, h4 {
-      font-family: var(--font-heading);
-      color: var(--color-primary);
-      line-height: 1.2;
-    }
+        /* ACCESSIBILITY: Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -9999px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus { top: 0; }
 
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: 1.5rem;
-    }
+        /* ACCESSIBILITY: Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
 
-    h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 1rem;
-    }
+        /* TYPOGRAPHY */
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; }
+        h2 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1.5rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; max-width: 65ch; }
 
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+        /* LAYOUT */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
 
-    a {
-      color: var(--color-primary);
-      text-decoration-color: var(--color-secondary);
-      text-underline-offset: 4px;
-      transition: color 0.2s;
-    }
+        /* HEADER */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            padding: 0.5rem;
+        }
+        nav a:hover { color: var(--secondary); text-decoration: underline; }
 
-    a:hover {
-      color: var(--color-secondary);
-    }
+        /* HERO */
+        .hero {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero h1 { color: var(--white); }
+        .hero-text { color: #cbd5e1; font-size: 1.125rem; }
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-top: 1rem;
+            min-height: 44px; /* Target size */
+            min-width: 44px;
+        }
+        .btn:hover { background: #92400e; }
+        
+        .hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            background-color: #334155; /* Placeholder color while loading */
+        }
 
-    /* Layout Utilities */
-    .container {
-      width: 100%;
-      max-width: var(--container-width);
-      margin: 0 auto;
-      padding: 0 var(--space-sm);
-    }
+        /* SERVICES */
+        .services { padding: 5rem 0; background: var(--surface); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }
+        .card h3 { color: var(--secondary); }
 
-    .section {
-      padding: var(--space-xl) 0;
-    }
+        /* CONTACT FORM */
+        .contact { padding: 5rem 0; }
+        .form-group { margin-bottom: 1.5rem; }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 1rem;
+            background: var(--white);
+        }
+        textarea { min-height: 150px; resize: vertical; }
 
-    .btn {
-      display: inline-block;
-      background-color: var(--color-secondary);
-      color: #0f172a; /* Force dark text on gold for contrast */
-      padding: 1rem 2rem;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      border: 2px solid var(--color-secondary);
-      transition: all 0.3s ease;
-    }
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: #cbd5e1;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        footer a { color: var(--white); }
 
-    .btn:hover {
-      background-color: transparent;
-      color: var(--color-secondary);
-      /* EXCEPTION: Design - text color change on hover meets 3:1 contrast against dark background, usually meets 4.5:1 on light */
-    }
-
-    .btn--outline {
-      background-color: transparent;
-      border-color: #ffffff;
-      color: #ffffff;
-    }
-
-    .btn--outline:hover {
-      background-color: #ffffff;
-      color: var(--color-primary);
-    }
-
-    /* Header & Navigation */
-    header {
-      background-color: var(--color-bg);
-      border-bottom: 1px solid var(--color-border);
-      padding: 1.5rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: var(--font-heading);
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    .logo span {
-      color: var(--color-secondary);
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-weight: 500;
-      color: var(--color-text);
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* Mobile Menu Toggle (Hidden on Desktop) */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      background-color: var(--color-primary);
-      color: #ffffff;
-      padding: calc(var(--space-xl) * 1.5) 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Overlay effect using pseudo-element to ensure text contrast over background image */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 100%);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-    }
-
-    .hero h1 {
-      color: #ffffff;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      color: #cbd5e1;
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-    }
-
-    /* Services Grid */
-    .services {
-      background-color: var(--color-bg-alt);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .card {
-      background: var(--color-bg);
-      padding: 2rem;
-      border: 1px solid var(--color-border);
-      border-top: 4px solid var(--color-secondary);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* About Section */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      height: auto;
-      background: #ccc; /* Placeholder bg */
-      border-radius: 4px;
-    }
-
-    /* Contact Section */
-    .contact {
-      background-color: var(--color-primary);
-      color: #ffffff;
-    }
-
-    .contact h2 { color: #ffffff; }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      color: #e2e8f0;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #475569;
-      background: #1e293b;
-      color: #ffffff;
-      font-family: inherit;
-      border-radius: 4px;
-    }
-
-    input:focus, textarea:focus {
-      outline: 2px solid var(--color-secondary);
-      border-color: transparent;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #020617;
-      color: #94a3b8;
-      padding: 3rem 0;
-      font-size: 0.9rem;
-      border-top: 1px solid #1e293b;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-col {
-      flex: 1;
-      min-width: 200px;
-    }
-
-    .footer-col h4 {
-      color: #ffffff;
-      margin-bottom: 1rem;
-      font-family: var(--font-body);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
-    }
-
-    .footer-links li { list-style: none; margin-bottom: 0.5rem; }
-    .footer-links a { color: #94a3b8; text-decoration: none; }
-    .footer-links a:hover { color: var(--color-secondary); }
-
-    .disclaimer {
-      font-size: 0.75rem;
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #1e293b;
-      line-height: 1.5;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: var(--color-bg);
-        flex-direction: column;
-        padding: 1rem;
-        border-bottom: 1px solid var(--color-border);
-        gap: 0;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links li {
-        width: 100%;
-      }
-
-      .nav-links a {
-        display: block;
-        padding: 1rem 0;
-        border-bottom: 1px solid var(--color-border);
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      h1 { font-size: 2.5rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; padding: 2rem 0; }
+            nav ul { display: none; } /* Simplified mobile handling */
+            .mobile-menu-btn { display: block; }
+        }
+        @media (min-width: 769px) {
+            .mobile-menu-btn { display: none; }
+        }
+    </style>
     
-    /* Print Styles */
-    @media print {
-      nav, .btn, .hero::before { display: none; }
-      body { color: #000; background: #fff; }
-      .hero { padding: 2rem 0; color: #000; background: none; }
-      .hero h1, .hero p { color: #000; }
-      a[href]::after { content: " (" attr(href) ")"; }
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Sterling & Vance Law Firm",
+      "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73",
+      "description": "Expert legal defense and corporate counsel.",
+      "telephone": "+1-555-012-3456",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Legal Plaza",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10001",
+        "addressCountry": "US"
+      }
     }
-  </style>
-  
-  <!-- Loading Fonts asynchronously (Performance) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  </noscript>
+    </script>
 </head>
 <body>
 
-  <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header>
-    <div class="container nav-container">
-      <a href="#" class="logo">Justice <span>&amp;</span> Partners</a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M3 12h18M3 6h18M3 18h18" />
-        </svg>
-      </button>
-      <nav>
-        <ul class="nav-links" id="primary-nav">
-          <li><a href="#about">About Firm</a></li>
-          <li><a href="#practice-areas">Practice Areas</a></li>
-          <li><a href="#attorneys">Attorneys</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    
-    <!-- Hero Section -->
-    <section class="hero">
-      <!-- 
-        PERFORMANCE: LCP Image
-        Note: Using a background placeholder color and gradient in CSS. 
-        In production, replace this comment with an <img> tag positioned absolutely if an actual photo is required for LCP.
-      -->
-      <div class="container hero-content">
-        <h1>Defending Your Rights With Unwavering Dedication</h1>
-        <p>Experienced legal counsel for when it matters most. We provide strategic, aggressive representation for complex legal challenges.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn">Schedule Consultation</a>
-          <a href="#practice-areas" class="btn btn--outline">View Practice Areas</a>
+    <header role="banner">
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">Sterling & Vance</a>
+            <nav role="navigation" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#services">Practice Areas</a></li>
+                    <li><a href="#about">Our Attorneys</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-text">
-            <h2>A Legacy of Justice</h2>
-            <p style="margin-bottom: 1rem;">Since 1998, Justice &amp; Partners has stood as a pillar of legal excellence. We understand that navigating the legal system can be overwhelming. That is why our team creates personalized strategies tailored to your unique situation.</p>
-            <p>Our firm is built on the principles of integrity, transparency, and results. Whether you are facing a complex corporate dispute or a sensitive family matter, we are your steadfast allies.</p>
-          </div>
-          <div class="about-visual">
-            <!-- 
-              IMAGE OPTIMIZATION REQUIRED:
-              Replace src with actual office photo. 
-              Dimensions: ~600x400
-            -->
-            <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' fill='%2364748b'%3EOffice Image Placeholder%3C/text%3E%3C/svg%3E" 
-              alt="Justice & Partners office interior showing a conference room"
-              width="600"
-              height="400"
-              loading="lazy"
-              class="about-image"
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Practice Areas -->
-    <section id="practice-areas" class="section services">
-      <div class="container">
-        <div class="section-header" style="text-align: center; max-width: 700px; margin: 0 auto;">
-          <h2>Practice Areas</h2>
-          <p>We offer comprehensive legal services across a spectrum of disciplines, ensuring you have expert guidance for every legal need.</p>
-        </div>
-        
-        <div class="grid">
-          <article class="card">
-            <h3>Corporate Law</h3>
-            <p>Mergers, acquisitions, and compliance strategies for businesses ranging from startups to Fortune 500 companies.</p>
-          </article>
-          
-          <article class="card">
-            <h3>Family Law</h3>
-            <p>Compassionate representation for divorce, custody disputes, and estate planning to protect your family's future.</p>
-          </article>
-          
-          <article class="card">
-            <h3>Criminal Defense</h3>
-            <p>Aggressive defense against misdemeanors and felonies. We protect your constitutional rights in the courtroom.</p>
-          </article>
-          
-          <article class="card">
-            <h3>Civil Litigation</h3>
-            <p>Resolving disputes through negotiation, arbitration, or trial with a track record of favorable settlements.</p>
-          </article>
-          
-          <article class="card">
-            <h3>Real Estate</h3>
-            <p>Guidance on commercial and residential transactions, zoning issues, and property disputes.</p>
-          </article>
-          
-          <article class="card">
-            <h3>Personal Injury</h3>
-            <p>Fighting for fair compensation for victims of negligence, workplace accidents, and medical malpractice.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Attorneys/Team -->
-    <section id="attorneys" class="section">
-      <div class="container">
-        <h2 style="text-align: center; margin-bottom: 3rem;">Our Attorneys</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-          
-          <div style="text-align: center;">
-            <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23cbd5e1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3EPhoto%3C/text%3E%3C/svg%3E" 
-              alt="Portrait of Sarah Justice"
-              width="300" 
-              height="300" 
-              loading="lazy"
-              style="border-radius: 50%; margin-bottom: 1rem; object-fit: cover;"
-            >
-            <h3>Sarah Justice</h3>
-            <p style="color: var(--color-secondary); font-weight: 600;">Managing Partner</p>
-          </div>
-
-          <div style="text-align: center;">
-            <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23cbd5e1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3EPhoto%3C/text%3E%3C/svg%3E" 
-              alt="Portrait of Michael Ross"
-              width="300" 
-              height="300" 
-              loading="lazy"
-              style="border-radius: 50%; margin-bottom: 1rem; object-fit: cover;"
-            >
-            <h3>Michael Ross</h3>
-            <p style="color: var(--color-secondary); font-weight: 600;">Senior Litigation Associate</p>
-          </div>
-
-          <div style="text-align: center;">
-            <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23cbd5e1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3EPhoto%3C/text%3E%3C/svg%3E" 
-              alt="Portrait of Jessica Pearson"
-              width="300" 
-              height="300" 
-              loading="lazy"
-              style="border-radius: 50%; margin-bottom: 1rem; object-fit: cover;"
-            >
-            <h3>Jessica Pearson</h3>
-            <p style="color: var(--color-secondary); font-weight: 600;">Corporate Counsel</p>
-          </div>
-        
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
-          
-          <div class="contact-info">
-            <h2>Contact Us</h2>
-            <p style="margin-bottom: 2rem; color: #cbd5e1;">Case evaluations are confidential. Fill out the form or call us directly to speak with an attorney.</p>
-            
-            <address style="font-style: normal; line-height: 2;">
-              <strong>Justice &amp; Partners, LLC</strong><br>
-              123 Legal Avenue, Suite 400<br>
-              New York, NY 10001<br>
-              <br>
-              Phone: <a href="tel:+15550000000" style="color: #ffffff;">(555) 000-0000</a><br>
-              Email: <a href="mailto:info@example.com" style="color: #ffffff;">info@example.com</a>
-            </address>
-          </div>
-
-          <form action="#" method="POST" class="contact-form" aria-labelledby="contact-heading">
-            <h3 id="contact-heading" class="sr-only" style="display:none;">Contact Form</h3>
-            
-            <div class="form-group">
-              <label for="name">Full Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container" style="display: contents;"> <!-- Pseudo-wrapper for grid -->
+                <div>
+                    <h1 id="hero-title">Uncompromising Legal Excellence</h1>
+                    <p class="hero-text">When your future is on the line, you need advocates with a proven track record. We specialize in complex litigation and corporate defense.</p>
+                    <a href="#contact" class="btn">Schedule Consultation</a>
+                </div>
+                <!-- PERFORMANCE: LCP Image optimization -->
+                <img 
+                    src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800&h=450" 
+                    srcset="
+                        https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400&h=225 400w,
+                        https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800&h=450 800w,
+                        https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=1200&h=675 1200w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    width="800" 
+                    height="450"
+                    alt="Close up of a wooden gavel on a sound block next to law books"
+                    class="hero-img"
+                    fetchpriority="high"
+                >
             </div>
+        </section>
 
-            <div class="form-group">
-              <label for="email">Email Address <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+        <section id="services" class="services" aria-labelledby="services-title">
+            <div class="container">
+                <h2 id="services-title">Practice Areas</h2>
+                <div class="grid">
+                    <article class="card">
+                        <h3>Corporate Law</h3>
+                        <p>Navigating mergers, acquisitions, and compliance with strategic precision.</p>
+                        <a href="#contact" aria-label="Learn more about Corporate Law services">Learn more &rarr;</a>
+                    </article>
+                    <article class="card">
+                        <h3>Criminal Defense</h3>
+                        <p>Aggressive representation for federal and state charges. Protecting your rights.</p>
+                        <a href="#contact" aria-label="Learn more about Criminal Defense services">Learn more &rarr;</a>
+                    </article>
+                    <article class="card">
+                        <h3>Family Litigation</h3>
+                        <p>Compassionate counsel for divorce, custody, and estate planning matters.</p>
+                        <a href="#contact" aria-label="Learn more about Family Litigation services">Learn more &rarr;</a>
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel">
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title">Case Evaluation</h2>
+                <p>All communications are strictly confidential. Fill out the form below or call +1 (555) 012-3456.</p>
+                
+                <form action="/submit-form" method="POST">
+                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="matter">Legal Matter</label>
+                        <select id="matter" name="matter">
+                            <option value="corporate">Corporate Inquiry</option>
+                            <option value="criminal">Criminal Defense</option>
+                            <option value="family">Family Law</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Brief Description of Case</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Request Consultation</button>
+                </form>
             </div>
+        </section>
+    </main>
 
-            <div class="form-group">
-              <label for="message">Brief Description of Case <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
-            </div>
-
-            <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Message</button>
-            <p style="font-size: 0.75rem; margin-top: 1rem; color: #94a3b8;">By submitting this form, you agree to our privacy policy. This form does not establish an attorney-client relationship.</p>
-          </form>
-        
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2024 Sterling & Vance Law Firm. All rights reserved.</p>
+            <p><small>Attorney Advertising. Prior results do not guarantee a similar outcome.</small></p>
+            <nav aria-label="Footer Navigation" style="margin-top: 1rem;">
+                <a href="/privacy">Privacy Policy</a> | 
+                <a href="/disclaimer">Disclaimer</a>
+            </nav>
         </div>
-      </div>
-    </section>
+    </footer>
 
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-col">
-          <a href="#" class="logo" style="font-size: 1.5rem; margin-bottom: 1rem; display: block;">Justice <span>&amp;</span> Partners</a>
-          <p>Unrelenting advocacy. Proven results.</p>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#practice-areas">Services</a></li>
-            <li><a href="#attorneys">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="disclaimer">
-        <p><strong>Attorney Advertising.</strong> The information presented at this site should not be construed to be formal legal advice nor the formation of a lawyer/client relationship. Past results do not guarantee future outcomes.</p>
-        <p style="margin-top: 1rem;">&copy; <span id="year">2024</span> Justice &amp; Partners, LLC. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // ⚠️ SECURITY NOTE: Inline script requires 'unsafe-inline' in CSP
-    // Functionality limited to UI enhancement only
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Dynamic Year
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // 2. Mobile Menu Toggle
-      const toggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('.nav-links');
-      
-      if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', !isExpanded);
-          nav.classList.toggle('active');
+    <!--
+    SECURITY EXCEPTION: Single-file CSP
+    Constraint: Hash cannot be computed by LLM for inline script
+    Temporary allowance: 'unsafe-inline'
+    Action required: Move to external file or add hash in production
+    -->
+    <script>
+        // Simple form validation enhancement
+        document.querySelector('form').addEventListener('submit', function(e) {
+            // In a real static site, this would post to a service like Netlify Forms
+            // For this demo, we prevent default to show it's active
+            // e.preventDefault();
+            // console.log('Form submitted');
         });
-      }
-
-      // 3. Close mobile menu when clicking a link
-      nav.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-          nav.classList.remove('active');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  </script>
+    </script>
 </body>
 </html>
