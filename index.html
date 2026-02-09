@@ -1,153 +1,466 @@
-<html lang="en-US"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jay Brown - Sr. Product Designer</title>
-<meta name="description" content="Portfolio of Jay Brown, a Sr. Product Designer based in Charlotte, NC.">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<style>
-:root {
---font-display: 'Inter Tight', sans-serif;
---font-body: 'Inter', sans-serif;
---color-text-main: #0e0e0e;
---color-text-muted: #6d6d6d;
---color-bg: #ffffff;
-}
-body {
-font-family: var(--font-body);
-color: var(--color-text-main);
-background-color: var(--color-bg);
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-}
-h1, h2, h3, h4, h5, h6 {
-font-family: var(--font-display);
-letter-spacing: -0.02em;
-}
-.tracking-tighter-custom {
-letter-spacing: -0.03em;
-}
-/* Custom Reveal Animation */
-.reveal-up {
-opacity: 0;
-transform: translateY(20px);
-animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.reveal-delay-1 { animation-delay: 0.1s; }
-.reveal-delay-2 { animation-delay: 0.2s; }
-.reveal-delay-3 { animation-delay: 0.3s; }
-@keyframes revealUp {
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-/* Hover Overlay Transition */
-.project-card:hover .project-overlay {
-opacity: 1;
-}
-.project-card:hover .project-info {
-opacity: 0;
-}
-.project-card:hover .view-case-study {
-opacity: 1;
-transform: translate(-50%, -50%) scale(1);
-}
-/* Smooth Scrolling */
-html {
-scroll-behavior: smooth;
-}
-</style></head>
-<body class="antialiased selection:bg-gray-200 selection:text-black bg-white">
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Brown - Sr. Product Designer</title>
+    <meta name="description" content="Portfolio of Jay Brown, a Sr. Product Designer based in Charlotte, NC.">
+    <link rel="canonical" href="https://jaybrown.design">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-transparent transition-all duration-300">
-        <div class="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- 
+    SECURITY EXCEPTION: Single-file CSP
+    Constraint: Hash cannot be computed by LLM
+    Temporary allowance: 'unsafe-inline'
+    Action required: Replace with sha384 hash before production
+    -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' https://framerusercontent.com;
+        media-src 'self' https://framerusercontent.com;
+        connect-src 'self';
+        base-uri 'self';
+        form-action 'self';
+    ">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/JQqsD7xecQfWDLwoSTpvjAMyVw.png?scale-down-to=512" fetchpriority="high">
+
+    <style>
+        /* RESET & BASE VARIABLES */
+        :root {
+            --font-display: 'Inter Tight', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --color-text-main: #0e0e0e;
+            /* DESIGN EXCEPTION: Darkened gray-500 (#6b7280 -> #525252) for WCAG AA compliance (4.5:1) */
+            --color-text-muted: #525252; 
+            /* DESIGN EXCEPTION: Darkened gray-400 (#9ca3af -> #737373) for WCAG AA compliance */
+            --color-text-light: #737373;
+            --color-bg: #ffffff;
+            --ease-custom: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text-main);
+            background-color: var(--color-bg);
+            line-height: 1.5;
+        }
+
+        ::selection {
+            background-color: #e5e7eb; /* bg-gray-200 */
+            color: #000;
+        }
+
+        img, video, svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ACCESSIBILITY UTILITIES */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -9999px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 1rem 2rem;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 0 0 8px 8px;
+        }
+        .skip-link:focus { top: 0; }
+
+        :focus-visible {
+            outline: 2px solid #000;
+            outline-offset: 2px;
+        }
+
+        /* UTILITY CLASSES (Recreating Tailwind Values Exactly) */
+        
+        /* Layout */
+        .container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+        .container-xl { max-width: 1400px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+        .container-video { max-width: 1300px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+        
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .fixed { position: fixed; }
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        .z-50 { z-index: 50; }
+        .z-40 { z-index: 40; }
+        .z-10 { z-index: 10; }
+        .overflow-hidden { overflow: hidden; }
+        .object-cover { object-fit: cover; }
+        
+        /* Spacing */
+        .mt-6 { margin-top: 1.5rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-24 { margin-bottom: 6rem; }
+        .mb-32 { margin-bottom: 8rem; }
+        .pb-24 { padding-bottom: 6rem; }
+        .pb-32 { padding-bottom: 8rem; }
+        .pt-8 { padding-top: 2rem; }
+        .pt-32 { padding-top: 8rem; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+        .gap-12 { gap: 3rem; }
+
+        /* Typography */
+        .font-display { font-family: var(--font-display); }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-5xl { font-size: 3rem; line-height: 1; }
+        .text-6xl { font-size: 3.75rem; line-height: 1; }
+        .tracking-tight { letter-spacing: -0.025em; }
+        .tracking-tighter-custom { letter-spacing: -0.03em; }
+        .text-center { text-align: center; }
+        .uppercase { text-transform: uppercase; }
+        .underline { text-decoration: underline; }
+        .decoration-1 { text-decoration-thickness: 1px; }
+        .underline-offset-4 { text-underline-offset: 4px; }
+        
+        /* Interactive */
+        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
+        .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
+        .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
+        .duration-300 { transition-duration: 300ms; }
+        .duration-700 { transition-duration: 700ms; }
+        
+        .hover-scale-105:hover { transform: scale(1.05); }
+        .hover-text-black:hover { color: #000; }
+        .hover-rotate-0:hover { transform: rotate(0deg); }
+        .active-scale-95:active { transform: scale(0.95); }
+        .pointer-events-none { pointer-events: none; }
+
+        /* SPECIFIC COMPONENTS */
+
+        /* Nav */
+        .nav-wrapper {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            top: 0; left: 0; right: 0;
+        }
+        .nav-inner { padding-top: 1rem; padding-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; }
+        .desktop-menu { display: none; }
+        
+        /* Hero */
+        .hero-img-container {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            flex-shrink: 0;
+            margin-bottom: 0; /* Reset */
+        }
+        .hero-img-rotate {
+            width: 100%; height: 100%;
+            border-radius: 0;
+            overflow: hidden;
+            transform: rotate(-8deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 700ms var(--ease-custom);
+        }
+        .hero-img-rotate:hover { transform: rotate(0deg); }
+        
+        .hero-h1 {
+            font-size: 3rem; /* text-5xl */
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: #0e0e0e;
+        }
+        .hero-link { color: #3b82f6; }
+        .hero-link:hover { color: #2563eb; }
+
+        /* Featured Work */
+        /* This is the empty sticky div from original */
+        .sticky-spacer {
+            position: sticky;
+            top: 6rem; /* top-24 */
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            color: white;
+            margin-bottom: 6rem; /* mb-24 */
+        }
+
+        .project-img-scale { transition: transform 700ms var(--ease-custom); }
+        .project-card:hover .project-img-scale { transform: scale(1.05); }
+        
+        .project-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 300ms;
+        }
+        .project-card:hover .project-overlay { opacity: 1; }
+
+        .view-case-study {
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            opacity: 0;
+            background-color: white;
+            color: black;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            pointer-events: none;
+            transition: all 300ms;
+            white-space: nowrap;
+        }
+        .project-card:hover .view-case-study {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .project-info {
+            transition: opacity 300ms;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .project-card:hover .project-info { opacity: 0.5; }
+
+        /* About */
+        .exp-row {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 2rem;
+        }
+        .exp-details {
+            display: grid;
+            gap: 2rem;
+        }
+
+        /* Footer */
+        .footer-cta-text {
+            font-size: 3rem; /* text-5xl */
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            max-width: 56rem;
+        }
+
+        /* ANIMATION */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.8s var(--ease-custom) forwards;
+        }
+        .reveal-delay-1 { animation-delay: 0.1s; }
+        .reveal-delay-2 { animation-delay: 0.2s; }
+        .reveal-delay-3 { animation-delay: 0.3s; }
+        @keyframes revealUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* MEDIA QUERIES (Recreating Tailwind Responsive Prefixes) */
+        @media (min-width: 640px) { /* sm: */
+            .px-sm-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        }
+
+        @media (min-width: 768px) { /* md: */
+            .md-flex { display: flex; }
+            .desktop-menu { display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%); }
+            
+            /* Hero */
+            .pt-md-48 { padding-top: 12rem; }
+            .pb-md-32 { padding-bottom: 8rem; }
+            .gap-md-24 { gap: 6rem; }
+            .hero-flex-row { flex-direction: row; align-items: center; }
+            .hero-img-margin { margin-left: 3rem; }
+            .hero-h1 { font-size: 88px; } /* Exact pixel value */
+            .text-md-2xl { font-size: 1.5rem; line-height: 2rem; }
+            
+            /* Video */
+            .h-md-850 { height: 850px; }
+            
+            /* Work */
+            .mb-md-32 { margin-bottom: 8rem; }
+            .sticky-spacer { margin-bottom: 8rem; }
+            .text-md-120 { font-size: 120px; } /* Exact pixel value */
+            .project-aspect-4-3 { aspect-ratio: 4 / 3; }
+            .project-info-row { flex-direction: row; align-items: center; }
+            .text-right-md { text-align: right; }
+            
+            /* About */
+            .about-intro-row { flex-direction: row; gap: 6rem; }
+            .w-md-1-3 { width: 33.333333%; }
+            .w-md-2-3 { width: 66.666667%; }
+            .text-md-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+            
+            /* Experience */
+            .exp-row-md { flex-direction: row; align-items: flex-start; gap: 8rem; }
+            .w-md-1-4 { width: 25%; }
+            .w-md-3-4 { width: 75%; }
+            .grid-cols-md-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            
+            /* Footer */
+            .footer-cta-text { font-size: 100px; } /* Exact pixel value */
+            .footer-row { flex-direction: row; }
+        }
+    </style>
+</head>
+<body class="antialiased bg-white">
+
+    <!-- SKIP LINK -->
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- NAV -->
+    <nav class="fixed z-50 w-full nav-wrapper transition-all duration-300" aria-label="Main Navigation">
+        <div class="container nav-inner">
             <!-- Logo -->
             <a href="#" class="text-sm font-semibold tracking-tight z-10 relative">
                 Jay Brown
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-                <a href="#work" class="text-sm font-medium text-gray-500 hover:text-black transition-colors">Work</a>
-                <a href="#about" class="text-sm font-medium text-gray-500 hover:text-black transition-colors">About</a>
+            <div class="desktop-menu">
+                <a href="#work" class="text-sm font-medium transition-colors" style="color: #6b7280;" onmouseover="this.style.color='black'" onmouseout="this.style.color='#6b7280'">Work</a>
+                <a href="#about" class="text-sm font-medium transition-colors" style="color: #6b7280;" onmouseover="this.style.color='black'" onmouseout="this.style.color='#6b7280'">About</a>
             </div>
 
             <!-- Email Button -->
-            <button onclick="copyEmail(this)" class="group flex items-center gap-2 bg-[#0e0e0e] text-white px-5 py-2.5 rounded-full hover:scale-105 transition-transform active:scale-95 text-sm font-medium">
+            <button type="button" class="group flex items-center gap-2 text-white px-5 py-2.5 rounded-full hover-scale-105 transition-transform active-scale-95 text-sm font-medium js-copy-email" style="background-color: #0e0e0e;">
                 <span class="email-text">j.brown@email.com</span>
-                <span class="iconify w-4 h-4 text-white/70" data-icon="lucide:copy"></span>
+                <!-- Iconify lucide:copy replacement -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.7);">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
             </button>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="w-full overflow-hidden">
+    <!-- MAIN CONTENT -->
+    <main id="main" class="w-full overflow-hidden">
         
-        <!-- Hero Section -->
-        <section class="max-w-[1200px] mx-auto px-6 pt-32 pb-24 md:pt-48 md:pb-32 flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-24">
+        <!-- HERO -->
+        <section class="container pt-32 pb-24 pt-md-48 pb-md-32 flex flex-col hero-flex-row items-center gap-12 gap-md-24">
             <!-- Hero Image -->
-            <div class="reveal-up relative w-full max-w-[350px] aspect-square flex-shrink-0 md:ml-12">
-                <div class="w-full h-full rounded-none overflow-hidden rotate-[-8deg] shadow-2xl transition-transform duration-700 hover:rotate-0">
-                    <img src="https://framerusercontent.com/images/JQqsD7xecQfWDLwoSTpvjAMyVw.png?scale-down-to=512" alt="Hero Image" class="w-full h-full object-cover">
+            <div class="reveal-up relative w-full hero-img-container hero-img-margin">
+                <div class="w-full h-full hero-img-rotate">
+                    <img src="https://framerusercontent.com/images/JQqsD7xecQfWDLwoSTpvjAMyVw.png?scale-down-to=512" alt="3D abstract shape" class="w-full h-full object-cover" width="350" height="350" fetchpriority="high">
                 </div>
             </div>
 
             <!-- Hero Text -->
-            <div class="reveal-up reveal-delay-1 flex flex-col gap-8 max-w-2xl">
-                <h1 class="text-5xl md:text-[88px] leading-[0.95] tracking-tighter-custom font-medium text-[#0e0e0e]">
+            <div class="reveal-up reveal-delay-1 flex flex-col gap-8 w-full" style="max-width: 42rem;">
+                <h1 class="hero-h1 font-medium font-display">
                     Sr. Product Designer
                 </h1>
-                <div class="text-xl md:text-2xl leading-relaxed font-medium text-[#0e0e0e] space-y-1">
-                    <p>Currently leading the design &amp; strategy of Crosby’s retail point-of-sale tool called <a href="#" class="text-blue-500 underline decoration-1 underline-offset-4 hover:text-blue-600 transition-colors">“Encore.”</a></p>
-                    <p class="text-gray-500 font-normal">In my spare time, I build Framer templates and run an online store.</p>
+                <div class="text-xl text-md-2xl font-medium font-display space-y-1" style="line-height: 1.625; color: #0e0e0e;">
+                    <p>Currently leading the design & strategy of Crosby’s retail point-of-sale tool called <a href="#" class="hero-link underline decoration-1 underline-offset-4 transition-colors">“Encore.”</a></p>
+                    <p class="font-normal" style="color: var(--color-text-muted);">In my spare time, I build Framer templates and run an online store.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Video Reel -->
-        <div class="reveal-up reveal-delay-2 max-w-[1300px] mx-auto px-4 sm:px-6 mb-32">
-            <div class="w-full aspect-video md:h-[850px] rounded-none overflow-hidden bg-gray-50">
-                <video autoplay="" loop="" muted="" playsinline="" poster="https://framerusercontent.com/images/YDjVNDAOvD5YmVUUL9xUCPgIbSw.png" class="w-full h-full object-cover">
+        <!-- VIDEO REEL -->
+        <div class="reveal-up reveal-delay-2 container-video mb-32">
+            <div class="w-full aspect-video h-md-850 overflow-hidden" style="background-color: #f9fafb; border-radius: 0;">
+                <video autoplay loop muted playsinline poster="https://framerusercontent.com/images/YDjVNDAOvD5YmVUUL9xUCPgIbSw.png" class="w-full h-full object-cover">
                     <source src="https://framerusercontent.com/assets/qrR62CWXqDhpxD9VshrTGooXZg.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
                 </video>
             </div>
         </div>
 
-        <!-- Featured Work Section -->
-        <section id="work" class="max-w-[1400px] mx-auto px-6 pb-32">
+        <!-- FEATURED WORK -->
+        <section id="work" class="container-xl pb-32">
             
-            <!-- Sticky Title -->
-            <div class="sticky top-24 z-10 flex flex-col items-center justify-center pointer-events-none mix-blend-difference text-white mb-24 md:mb-32">
-                <!-- Using mix-blend-difference to ensure visibility over content if needed, though original design places text in flow -->
+            <!-- Sticky Title (Spacer) -->
+            <div class="sticky-spacer mb-24 mb-md-32">
+                 <!-- This element is preserved for spacing/layout fidelity -->
             </div>
             
             <div class="flex flex-col items-center gap-12 text-center mb-24 reveal-up">
-                <h2 class="text-6xl md:text-[120px] font-medium tracking-tighter-custom leading-none">Featured work</h2>
-                <p class="text-gray-500 uppercase tracking-wide text-xs font-semibold">(Scroll to explore)</p>
+                <h2 class="text-6xl text-md-120 font-medium tracking-tighter-custom font-display" style="line-height: 1;">Featured work</h2>
+                <p class="uppercase tracking-wide font-semibold" style="color: var(--color-text-muted); font-size: 0.75rem; letter-spacing: 0.05em;">(Scroll to explore)</p>
             </div>
 
             <!-- Project 1 -->
             <div class="reveal-up project-card group relative w-full mb-32">
                 <a href="#" class="block w-full">
-                    <div class="relative w-full aspect-[16/9] overflow-hidden rounded-[24px]">
-                        <img src="https://framerusercontent.com/images/R1r7VFivZ1p7eirOLoMdE5NV80M.jpg" alt="Olio Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="relative w-full aspect-[16/9] overflow-hidden" style="border-radius: 24px;">
+                        <img src="https://framerusercontent.com/images/R1r7VFivZ1p7eirOLoMdE5NV80M.jpg" alt="Olio Project" class="w-full h-full object-cover project-img-scale" loading="lazy" width="1400" height="788">
                         
                         <!-- Hover Overlay -->
-                        <div class="project-overlay absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+                        <div class="project-overlay absolute inset-0"></div>
                         
                         <!-- Floating Button -->
-                        <div class="view-case-study absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 bg-white text-black px-6 py-3 rounded-full font-medium text-sm pointer-events-none scale-95">
+                        <div class="view-case-study absolute">
                             View case study
                         </div>
                     </div>
                     
-                    <div class="project-info mt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 transition-opacity duration-300 group-hover:opacity-50">
-                        <h3 class="text-2xl font-medium">Olio</h3>
-                        <p class="text-lg text-gray-400 font-normal max-w-md text-right">A premium Framer portfolio template thoughtfully crafted for UX/UI Designers.</p>
+                    <div class="project-info mt-6 project-info-row justify-between">
+                        <h3 class="text-2xl font-medium font-display">Olio</h3>
+                        <p class="text-lg font-normal text-right-md" style="color: var(--color-text-light); max-width: 28rem;">A premium Framer portfolio template thoughtfully crafted for UX/UI Designers.</p>
                     </div>
                 </a>
             </div>
@@ -155,17 +468,17 @@ scroll-behavior: smooth;
             <!-- Project 2 -->
             <div class="reveal-up project-card group relative w-full mb-32">
                 <a href="#" class="block w-full">
-                    <div class="relative w-full aspect-[16/9] md:aspect-[4/3] overflow-hidden rounded-[24px]">
-                        <img src="https://framerusercontent.com/images/conknpf49hPAVpbVfu0eEPiE4SM.jpeg" alt="PromptBox Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="project-overlay absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-                        <div class="view-case-study absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 bg-white text-black px-6 py-3 rounded-full font-medium text-sm pointer-events-none scale-95">
+                    <div class="relative w-full aspect-[16/9] project-aspect-4-3 overflow-hidden" style="border-radius: 24px;">
+                        <img src="https://framerusercontent.com/images/conknpf49hPAVpbVfu0eEPiE4SM.jpeg" alt="PromptBox Project" class="w-full h-full object-cover project-img-scale" loading="lazy" width="1400" height="1050">
+                        <div class="project-overlay absolute inset-0"></div>
+                        <div class="view-case-study absolute">
                             View case study
                         </div>
                     </div>
                     
-                    <div class="project-info mt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 transition-opacity duration-300 group-hover:opacity-50">
-                        <h3 class="text-2xl font-medium">PromptBox</h3>
-                        <p class="text-lg text-gray-400 font-normal max-w-md text-right">A creative hub designed for AI Artists, providing a platform to share their AI prompts online.</p>
+                    <div class="project-info mt-6 project-info-row justify-between">
+                        <h3 class="text-2xl font-medium font-display">PromptBox</h3>
+                        <p class="text-lg font-normal text-right-md" style="color: var(--color-text-light); max-width: 28rem;">A creative hub designed for AI Artists, providing a platform to share their AI prompts online.</p>
                     </div>
                 </a>
             </div>
@@ -173,93 +486,94 @@ scroll-behavior: smooth;
             <!-- Project 3 -->
             <div class="reveal-up project-card group relative w-full">
                 <a href="#" class="block w-full">
-                    <div class="relative w-full aspect-[16/9] overflow-hidden rounded-[24px]">
-                        <img src="https://framerusercontent.com/images/h25SyziLUKTHENOdmXtNMuyOHdM.jpg" alt="Olio Noir Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="project-overlay absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-                        <div class="view-case-study absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 bg-white text-black px-6 py-3 rounded-full font-medium text-sm pointer-events-none scale-95">
+                    <div class="relative w-full aspect-[16/9] overflow-hidden" style="border-radius: 24px;">
+                        <img src="https://framerusercontent.com/images/h25SyziLUKTHENOdmXtNMuyOHdM.jpg" alt="Olio Noir Project" class="w-full h-full object-cover project-img-scale" loading="lazy" width="1400" height="788">
+                        <div class="project-overlay absolute inset-0"></div>
+                        <div class="view-case-study absolute">
                             View case study
                         </div>
                     </div>
                     
-                    <div class="project-info mt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 transition-opacity duration-300 group-hover:opacity-50">
-                        <h3 class="text-2xl font-medium">Olio Noir</h3>
-                        <p class="text-lg text-gray-400 font-normal max-w-md text-right">A Framer portfolio template thoughtfully crafted for UX/UI Designers looking to make an impression.</p>
+                    <div class="project-info mt-6 project-info-row justify-between">
+                        <h3 class="text-2xl font-medium font-display">Olio Noir</h3>
+                        <p class="text-lg font-normal text-right-md" style="color: var(--color-text-light); max-width: 28rem;">A Framer portfolio template thoughtfully crafted for UX/UI Designers looking to make an impression.</p>
                     </div>
                 </a>
             </div>
 
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="max-w-[1200px] mx-auto px-6 py-32">
+        <!-- ABOUT SECTION -->
+        <section id="about" class="container pb-32 pt-32">
             <div class="mb-24 reveal-up">
-                <h2 class="text-6xl md:text-[88px] font-medium tracking-tighter-custom mb-12">About</h2>
+                <h2 class="text-6xl hero-h1 font-medium font-display mb-12" style="font-size: 88px;">About</h2>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-12 md:gap-24 mb-32 reveal-up">
-                <div class="w-full md:w-1/3">
-                    <h3 class="text-2xl md:text-3xl font-medium leading-tight">Over a decade of experience building thoughtful digital experiences that scale.</h3>
+            <div class="flex flex-col about-intro-row mb-32 reveal-up">
+                <div class="w-full w-md-1-3">
+                    <h3 class="text-2xl text-md-3xl font-medium font-display leading-tight">Over a decade of experience building thoughtful digital experiences that scale.</h3>
                 </div>
-                <div class="w-full md:w-2/3">
-                    <p class="text-xl md:text-xl leading-relaxed text-gray-800 font-normal">
+                <div class="w-full w-md-2-3">
+                    <p class="text-xl leading-relaxed font-normal" style="color: #1f2937;">
                         My name is Jay, and I’m a Senior Product Designer with over a decade of experience crafting thoughtful, user-centered solutions and leading projects that balance strategy with creativity. With a focus on strategic thinking, I excel at guiding cross-functional teams through product iteration. Based in Charlotte, NC, I’m seeking a new team where I can bring my expertise and drive meaningful impact.
                     </p>
                 </div>
             </div>
 
             <!-- Experience List -->
-            <div class="space-y-16 reveal-up">
+            <div class="space-y-16 reveal-up" style="display: flex; flex-direction: column; gap: 4rem;">
+                
                 <!-- Item 1 -->
-                <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-32 border-t border-gray-200 pt-8">
-                    <div class="w-full md:w-1/4">
-                        <span class="text-xl font-medium">2021 – Present</span>
+                <div class="exp-row exp-row-md">
+                    <div class="w-full w-md-1-4">
+                        <span class="text-xl font-medium font-display">2021 – Present</span>
                     </div>
-                    <div class="w-full md:w-3/4 grid md:grid-cols-2 gap-8">
+                    <div class="w-full w-md-3-4 exp-details grid-cols-md-2">
                         <div>
-                            <h4 class="text-xl font-medium">Crosby, Senior UX Designer.</h4>
-                            <span class="text-gray-500">Remote</span>
+                            <h4 class="text-xl font-medium font-display">Crosby, Senior UX Designer.</h4>
+                            <span style="color: var(--color-text-muted);">Remote</span>
                         </div>
                         <p class="text-lg text-gray-800">Leading the design and strategy of Crosby's retail POS tool across mobile and in-store platforms.</p>
                     </div>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-32 border-t border-gray-200 pt-8">
-                    <div class="w-full md:w-1/4">
-                        <span class="text-xl font-medium">2015 – 2021</span>
+                <div class="exp-row exp-row-md">
+                    <div class="w-full w-md-1-4">
+                        <span class="text-xl font-medium font-display">2015 – 2021</span>
                     </div>
-                    <div class="w-full md:w-3/4 grid md:grid-cols-2 gap-8">
+                    <div class="w-full w-md-3-4 exp-details grid-cols-md-2">
                         <div>
-                            <h4 class="text-xl font-medium">Norman &amp; Co, Lead Product Designer.</h4>
-                            <span class="text-gray-500">Remote</span>
+                            <h4 class="text-xl font-medium font-display">Norman & Co, Lead Product Designer.</h4>
+                            <span style="color: var(--color-text-muted);">Remote</span>
                         </div>
-                        <p class="text-lg text-gray-800">Led the design and strategy of Norman &amp; Co's core in-car experience, called Scout.</p>
+                        <p class="text-lg text-gray-800">Led the design and strategy of Norman & Co's core in-car experience, called Scout.</p>
                     </div>
                 </div>
 
                 <!-- Item 3 -->
-                <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-32 border-t border-gray-200 pt-8">
-                    <div class="w-full md:w-1/4">
-                        <span class="text-xl font-medium">2012 – 2015</span>
+                <div class="exp-row exp-row-md">
+                    <div class="w-full w-md-1-4">
+                        <span class="text-xl font-medium font-display">2012 – 2015</span>
                     </div>
-                    <div class="w-full md:w-3/4 grid md:grid-cols-2 gap-8">
+                    <div class="w-full w-md-3-4 exp-details grid-cols-md-2">
                         <div>
-                            <h4 class="text-xl font-medium">Gardona, Product Designer.</h4>
-                            <span class="text-gray-500">Remote</span>
+                            <h4 class="text-xl font-medium font-display">Gardona, Product Designer.</h4>
+                            <span style="color: var(--color-text-muted);">Remote</span>
                         </div>
                         <p class="text-lg text-gray-800">Launched Gardona's e-scooter rental-sharing web app, and built a centralized evolution of design systems.</p>
                     </div>
                 </div>
 
                 <!-- Item 4 -->
-                <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-32 border-t border-gray-200 pt-8">
-                    <div class="w-full md:w-1/4">
-                        <span class="text-xl font-medium">2009 – 2012</span>
+                <div class="exp-row exp-row-md">
+                    <div class="w-full w-md-1-4">
+                        <span class="text-xl font-medium font-display">2009 – 2012</span>
                     </div>
-                    <div class="w-full md:w-3/4 grid md:grid-cols-2 gap-8">
+                    <div class="w-full w-md-3-4 exp-details grid-cols-md-2">
                         <div>
-                            <h4 class="text-xl font-medium">Freelance, Product Designer.</h4>
-                            <span class="text-gray-500">Remote</span>
+                            <h4 class="text-xl font-medium font-display">Freelance, Product Designer.</h4>
+                            <span style="color: var(--color-text-muted);">Remote</span>
                         </div>
                         <p class="text-lg text-gray-800">Partnered with a range of clients to create intuitive and innovative product features, specializing in e-commerce experiences.</p>
                     </div>
@@ -269,24 +583,27 @@ scroll-behavior: smooth;
 
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full bg-white border-t border-gray-200">
-        <div class="max-w-[1200px] mx-auto px-6 py-24 flex flex-col items-center">
+    <!-- FOOTER -->
+    <footer class="w-full bg-white" style="border-top: 1px solid #e5e7eb;">
+        <div class="container py-24 flex flex-col items-center" style="padding-top: 6rem; padding-bottom: 6rem;">
             
-            <h2 class="text-5xl md:text-[100px] font-medium tracking-tighter-custom leading-[0.9] text-center mb-16 max-w-4xl reveal-up">
+            <h2 class="footer-cta-text font-medium font-display text-center mb-16 reveal-up">
                 Let's get to know each other
             </h2>
 
-            <button onclick="copyEmail(this)" class="group flex items-center gap-3 bg-[#0e0e0e] text-white px-8 py-4 rounded-full hover:scale-105 transition-transform active:scale-95 text-lg font-medium mb-32 reveal-up reveal-delay-1">
+            <button type="button" class="group flex items-center gap-3 text-white px-8 py-4 rounded-full hover-scale-105 transition-transform active-scale-95 text-lg font-medium mb-32 reveal-up reveal-delay-1 js-copy-email" style="background-color: #0e0e0e; margin-bottom: 8rem;">
                 <span class="email-text">J.Brown@email.com</span>
-                <span class="iconify w-5 h-5 text-white/70" data-icon="lucide:copy"></span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.7);">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
             </button>
 
-            <div class="w-full flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium text-black/80 border-t border-gray-100 pt-8 reveal-up reveal-delay-2">
+            <div class="w-full flex flex-col footer-row justify-between items-center gap-6 text-sm font-medium pt-8 reveal-up reveal-delay-2" style="color: rgba(0,0,0,0.8); border-top: 1px solid #f3f4f6;">
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-black transition-colors">TW</a>
-                    <a href="#" class="hover:text-black transition-colors">IG</a>
-                    <a href="#" class="hover:text-black transition-colors">DR</a>
+                    <a href="#" class="hover-text-black transition-colors">TW</a>
+                    <a href="#" class="hover-text-black transition-colors">IG</a>
+                    <a href="#" class="hover-text-black transition-colors">DR</a>
                 </div>
                 <div>
                     lofi framer template – 25©
@@ -296,28 +613,31 @@ scroll-behavior: smooth;
     </footer>
 
     <!-- Fixed CTA Button -->
-    <div class="fixed bottom-8 right-8 z-40 reveal-up reveal-delay-3">
-        <a href="#" class="flex items-center gap-2 bg-[#009aff] text-white px-5 py-3 rounded-xl shadow-lg hover:-translate-y-1 transition-transform duration-300 font-semibold text-sm">
+    <div class="fixed z-40 reveal-up reveal-delay-3" style="bottom: 2rem; right: 2rem;">
+        <a href="#" class="flex items-center gap-2 text-white px-5 py-3 rounded-xl hover:-translate-y-1 transition-transform duration-300 font-semibold text-sm" style="background-color: #009aff; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
             Purchase for $99
         </a>
     </div>
 
-    <!-- Script for Email Copy -->
     <script>
-        function copyEmail(button) {
-            const email = "j.brown@email.com";
-            const textSpan = button.querySelector('.email-text');
-            const originalText = textSpan.innerText;
-            
-            navigator.clipboard.writeText(email).then(() => {
-                textSpan.innerText = "Email copied!";
-                setTimeout(() => {
-                    textSpan.innerText = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
+        document.addEventListener('DOMContentLoaded', () => {
+            const btns = document.querySelectorAll('.js-copy-email');
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const email = "j.brown@email.com";
+                    const textSpan = btn.querySelector('.email-text');
+                    const originalText = textSpan.innerText;
+                    
+                    navigator.clipboard.writeText(email).then(() => {
+                        textSpan.innerText = "Email copied!";
+                        setTimeout(() => {
+                            textSpan.innerText = originalText;
+                        }, 2000);
+                    }).catch(err => console.error('Failed to copy', err));
+                });
             });
-        }
+        });
     </script>
 
-</body></html>
+</body>
+</html>
