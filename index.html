@@ -1,518 +1,1411 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- 
-  SECURITY TODO: Move to Production
-  1. The current CSP uses 'unsafe-inline' to ensure this single file works immediately.
-  2. To achieve 100/100 Best Practices, you must calculate the hash of the script at the bottom:
-     Command: echo -n "EXACT_SCRIPT_CONTENT" | openssl dgst -sha384 -binary | openssl base64
-  3. Replace 'unsafe-inline' with 'sha384-YOUR_CALCULATED_HASH'
-  -->
-  <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self'; 
-                 script-src 'self' 'unsafe-inline'; 
-                 style-src 'self' 'unsafe-inline'; 
-                 img-src 'self' data: https:; 
-                 font-src 'self'; 
-                 connect-src 'self'; 
-                 base-uri 'self'; 
-                 form-action 'self'">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- SEO Meta Tags -->
-  <title>Lighthouse+ | Instant Website Performance & SEO Audit</title>
-  <meta name="description" content="Get a comprehensive website rating in seconds. Lighthouse+ analyzes performance, accessibility, best practices, and SEO with actionable insights.">
-  <link rel="canonical" href="https://example.com/lighthouse-plus">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Lighthouse+ | Website Auditor">
-  <meta property="og:description" content="Check your website score instantly. Free performance and SEO analysis tool.">
-  <meta property="og:url" content="https://example.com/lighthouse-plus">
-  <meta property="og:image" content="https://example.com/og-image.jpg">
+    <!-- 
+    SECURITY TODO: Move to Production
+    1. The current CSP uses 'unsafe-inline' to ensure this single file works immediately without a build step.
+    2. To achieve 100/100 Best Practices, calculate the SHA-384 hash of the script at the bottom:
+       Command: echo -n "EXACT_SCRIPT_CONTENT" | openssl dgst -sha384 -binary | openssl base64
+    3. Replace 'unsafe-inline' in script-src below with 'sha384-YOUR_CALCULATED_HASH'
+    
+    PLATFORM NOTE: 
+    frame-ancestors 'none' is omitted because it is ignored in <meta> tags. 
+    Configure X-Frame-Options: DENY on your hosting provider (Netlify/Vercel/Cloudflare).
+    -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self' 'unsafe-inline'; 
+                   style-src 'self' 'unsafe-inline'; 
+                   img-src 'self' https: data:; 
+                   font-src 'self'; 
+                   connect-src 'self'; 
+                   base-uri 'self'; 
+                   form-action 'self'">
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Lighthouse+",
-    "description": "Web performance and SEO auditing tool",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
+    <title>About CKO Kickboxing | Real People, Real Results</title>
+    <meta
+      name="description"
+      content="Discover the CKO Kickboxing story. High-energy, bag-based fitness classes designed to empower every body. Book your free first class today."
+    >
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
 
-  <style>
-    /* 
-     * CRITICAL CSS 
-     * Methodology: BEM-ish, CSS Variables for theming
-     */
-    :root {
-      /* Palette - Accessible Contrast Verified */
-      --primary: #2563eb; /* Blue 600 */
-      --primary-hover: #1d4ed8; /* Blue 700 */
-      --text-main: #1f2937; /* Gray 800 */
-      --text-muted: #4b5563; /* Gray 600 */
-      --bg-surface: #ffffff;
-      --bg-subtle: #f3f4f6; /* Gray 100 */
-      --border: #e5e7eb; /* Gray 200 */
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://example.com/about">
+
+    <!-- Favicon (Inline SVG for performance) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='30' font-family='Arial, sans-serif' fill='%23facc15' font-weight='700'%3ECKO%3C/text%3E%3C/svg%3E"
+    >
+
+    <!-- Performance Hints -->
+    <link rel="preconnect" href="https://i.ibb.co" crossorigin>
+    
+    <!-- LCP Image Preload with Responsive Support -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg"
+      imagesizes="(min-width: 1024px) 50vw, 100vw"
+    >
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="About CKO Kickboxing | Real People, Real Results">
+    <meta
+      property="og:description"
+      content="Discover the CKO Kickboxing story. High-energy, bag-based fitness classes designed to empower every body. Book your free first class today."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/about">
+    <meta property="og:site_name" content="CKO Kickboxing">
+    <meta property="og:image" content="https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg">
+    <meta property="og:image:alt" content="CKO Kickboxing gym interior">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About CKO Kickboxing">
+    <meta
+      name="twitter:description"
+      content="Discover the CKO Kickboxing story. High-energy, bag-based fitness classes designed to empower every body."
+    >
+    <meta
+      name="twitter:image"
+      content="https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg"
+    >
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "FitnessCenter",
+            "name": "CKO Kickboxing",
+            "image": "https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg",
+            "url": "https://example.com",
+            "priceRange": "$$"
+          },
+          {
+            "@type": "AboutPage",
+            "name": "About CKO Kickboxing",
+            "description": "Learn the story behind CKO Kickboxing—high-energy, bag-based kickboxing classes built to empower every body.",
+            "url": "https://example.com/about",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://example.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://example.com/about"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      :root {
+        --black: #000000;
+        --zinc-950: #09090b;
+        --zinc-900: #18181b;
+        --zinc-800: #27272a;
+        --zinc-700: #3f3f46;
+        --zinc-600: #52525b;
+        --zinc-500: #71717a;
+        --zinc-400: #a1a1aa;
+        --zinc-300: #d4d4d8;
+        --zinc-200: #e4e4e7;
+        --white: #ffffff;
+
+        --yellow-400: #facc15;
+        --yellow-300: #fde047;
+
+        --border-white-5: rgba(255, 255, 255, 0.05);
+        --border-white-10: rgba(255, 255, 255, 0.1);
+
+        --radius-sm: 0.125rem;
+        --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      }
+
+      /* Utility */
+      .hidden { display: none !important; }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      /* Base */
+      html {
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+      }
+      *, *::before, *::after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background: var(--black);
+        color: var(--zinc-200);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      main { flex: 1; }
+
+      ::selection {
+        background: var(--yellow-400);
+        color: #000;
+      }
+
+      /* Focus Handling */
+      :focus-visible {
+        outline: 2px solid var(--yellow-400);
+        outline-offset: 2px;
+      }
+
+      /* Skip Link */
+      .skip-link {
+        position: absolute;
+        left: 0.75rem;
+        top: 0.75rem;
+        padding: 0.75rem 1rem;
+        transform: translateY(-200%);
+        transition: transform 150ms ease;
+        z-index: 10000;
+        background-color: var(--yellow-400);
+        color: #000;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: var(--radius-sm);
+      }
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      /* Layout */
+      .container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+        background: rgba(0, 0, 0, 0.9);
+        border-bottom: 1px solid var(--border-white-5);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .nav__inner {
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        border-radius: var(--radius-sm);
+      }
+      .brand__cko {
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-style: italic;
+        letter-spacing: -0.05em;
+        color: var(--white);
+      }
+      .brand__sub {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--yellow-400);
+        margin-top: 0.25rem;
+      }
+
+      .nav__menu {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+      }
+      .navlink {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--zinc-200);
+        text-decoration: none;
+        border-radius: var(--radius-sm);
+        transition: color 0.2s;
+      }
+      .navlink:hover, .navlink--active {
+        color: var(--yellow-400);
+      }
+
+      .nav__right {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .btn-cta {
+        display: none;
+        background: var(--yellow-400);
+        color: #000;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: var(--radius-sm);
+        transition: background-color 0.2s;
+      }
+      .btn-cta:hover {
+        background: var(--yellow-300);
+      }
+
+      /* Mobile Menu */
+      .menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: transparent;
+        border: 1px solid transparent;
+        color: var(--white);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+      }
+      .menu-btn:hover { color: var(--yellow-400); }
+      .menu-btn svg { width: 1.5rem; height: 1.5rem; pointer-events: none; }
+
+      .backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 40;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 300ms ease;
+      }
+      .backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+      .mobile-menu {
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        background: var(--zinc-950);
+        border-bottom: 1px solid var(--zinc-800);
+        z-index: 50;
+        box-shadow: var(--shadow-2xl);
+        display: none;
+      }
+      .mobile-menu.is-open { display: block; }
+
+      .mobile-menu__inner {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .mobile-link {
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--white);
+        padding: 0.5rem 0;
+        border-radius: var(--radius-sm);
+      }
+      .mobile-link--active { color: var(--yellow-400); }
+
+      .mobile-cta {
+        margin-top: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.75rem 0;
+        background: var(--yellow-400);
+        color: #000;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: var(--radius-sm);
+      }
+
+      /* Noscript Fallback */
+      .noscript-bar {
+        border-top: 1px solid #18181b;
+        background: #09090b;
+      }
+      .noscript-inner {
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .noscript-cta { display: inline-flex !important; }
+
+      /* Hero Section */
+      .hero {
+        padding: 10rem 1.5rem 5rem;
+        border-bottom: 1px solid var(--zinc-900);
+        background: rgba(9, 9, 11, 0.5);
+      }
+      .hero__inner {
+        max-width: 56rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .hero__title {
+        margin: 0 0 1.5rem;
+        font-weight: 600;
+        color: var(--white);
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1;
+      }
+      .hero__title span { color: var(--yellow-400); }
+      .hero__lead {
+        margin: 0 auto;
+        max-width: 42rem;
+        font-size: 1.125rem;
+        line-height: 1.75;
+        color: var(--zinc-400);
+        font-weight: 300;
+      }
+
+      /* Content Sections */
+      .section {
+        padding: 6rem 1.5rem;
+        background: var(--black);
+      }
+      .two-col {
+        max-width: 80rem;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
       
-      /* Score Colors */
-      --score-good: #16a34a; /* Green 600 */
-      --score-avg: #ca8a04; /* Yellow 600 */
-      --score-poor: #dc2626; /* Red 600 */
+      .stack-12 { display: flex; flex-direction: column; gap: 3rem; }
+      .block { display: flex; flex-direction: column; gap: 1.5rem; }
 
-      /* Spacing */
-      --container: 1200px;
-    }
+      .kicker { display: flex; align-items: center; gap: 1rem; }
+      .kicker__line { height: 1px; width: 2rem; background: var(--yellow-400); }
+      .kicker__text {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--yellow-400);
+      }
 
-    /* Reset & Base */
-    *, *::before, *::after { box-sizing: border-box; }
-    
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, sans-serif;
-      color: var(--text-main);
-      background: var(--bg-surface);
-      line-height: 1.5;
-    }
+      .h2 {
+        margin: 0;
+        font-size: 1.875rem;
+        font-weight: 600;
+        color: var(--white);
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      .p {
+        margin: 0;
+        color: var(--zinc-400);
+        line-height: 1.75;
+        font-weight: 300;
+      }
 
-    /* Accessibility Utilities */
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
-    }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--zinc-900);
+      }
+      .stat__num {
+        display: block;
+        font-size: 2.25rem;
+        font-weight: 600;
+        color: var(--white);
+        letter-spacing: -0.02em;
+        margin-bottom: 0.25rem;
+      }
+      .stat__label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--zinc-500);
+      }
 
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--text-main);
-      color: white;
-      padding: 8px 16px;
-      z-index: 100;
-      text-decoration: none;
-      transition: top 0.2s;
-    }
-    .skip-link:focus { top: 0; }
+      /* Image Grid */
+      .visuals {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .img-card {
+        border: 1px solid var(--zinc-800);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        background: var(--zinc-900);
+      }
+      .img-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+        transition: transform 700ms ease-out, opacity 700ms ease-out;
+        display: block;
+      }
+      .img-card:hover img {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      .img-wide { aspect-ratio: 4 / 3; }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+      .img-square { aspect-ratio: 1 / 1; }
 
-    :focus-visible {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
-    }
+      .stat-box {
+        border: 1px solid var(--zinc-800);
+        border-radius: var(--radius-sm);
+        background: var(--zinc-950);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .stat-box__title {
+        color: var(--white);
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .stat-box__sub {
+        margin-top: 0.25rem;
+        color: var(--zinc-600);
+        font-size: 0.625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+      .icon-lg {
+        width: 2.5rem;
+        height: 2.5rem;
+        color: var(--yellow-400);
+        margin-bottom: 1rem;
+      }
 
-    /* Layout */
-    .container {
-      width: 90%;
-      max-width: var(--container);
-      margin: 0 auto;
-    }
+      /* Values Section */
+      .values {
+        background: var(--zinc-950);
+        border-top: 1px solid var(--zinc-900);
+        border-bottom: 1px solid var(--zinc-900);
+        padding: 5rem 0;
+      }
+      .values__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .value { cursor: default; }
+      .value__iconWrap {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 999px;
+        background: var(--zinc-900);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        transition: transform 300ms ease, background-color 300ms ease;
+      }
+      .value:hover .value__iconWrap {
+        transform: scale(1.1);
+        background: var(--yellow-400);
+      }
+      .value__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: var(--white);
+        transition: color 300ms ease;
+      }
+      .value:hover .value__icon { color: #000; }
+      .value__h3 {
+        margin: 0 0 0.75rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--white);
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      .value__p {
+        margin: 0;
+        font-size: 0.875rem;
+        line-height: 1.75;
+        color: var(--zinc-500);
+      }
 
-    /* Header */
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 0;
-    }
-    
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+      /* Booking Section */
+      .book {
+        background: var(--zinc-950);
+        position: relative;
+        overflow: hidden;
+        padding: 6rem 0;
+      }
+      .book__topline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(250, 204, 21, 0.2), transparent);
+      }
+      .book__inner {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .book__center { text-align: center; margin-bottom: 3rem; }
+      .kickerBlock {
+        display: block;
+        color: var(--yellow-400);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      .book__h2 {
+        margin: 0 0 1rem;
+        font-size: 2.25rem;
+        font-weight: 600;
+        color: var(--white);
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      .book__p {
+        margin: 0;
+        color: var(--zinc-400);
+        font-size: 1.125rem;
+        font-weight: 300;
+      }
 
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--text-main);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+      /* Form */
+      .form {
+        background: rgba(39, 39, 42, 0.5);
+        border: 1px solid var(--zinc-800);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-2xl);
+        padding: 2rem;
+      }
+      .form__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .field label {
+        display: block;
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--zinc-500);
+        margin-bottom: 0.5rem;
+      }
+      .input, select {
+        width: 100%;
+        background: var(--zinc-950);
+        border: 1px solid var(--zinc-800);
+        color: var(--zinc-200);
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: var(--radius-sm);
+        outline: none;
+      }
+      .input:focus, select:focus {
+        border-color: rgba(250, 204, 21, 0.5);
+        box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.5);
+      }
+      .selectWrap { position: relative; }
+      .selectWrap select { appearance: none; }
+      .selectWrap .chev {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1rem;
+        height: 1rem;
+        color: var(--zinc-500);
+        pointer-events: none;
+      }
+      .field--spaced { margin-bottom: 2rem; }
 
-    .logo svg { width: 24px; height: 24px; fill: var(--primary); }
+      .submit {
+        width: 100%;
+        border: 0;
+        border-radius: var(--radius-sm);
+        background: var(--yellow-400);
+        color: #000;
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 1rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .submit:hover { background: var(--yellow-300); }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 4rem 0 6rem;
-      background: var(--bg-subtle);
-    }
+      .fineprint {
+        text-align: center;
+        /* CONTRAST FIX: Increased from zinc-600 to zinc-400 for WCAG AA */
+        color: var(--zinc-400);
+        font-size: 0.75rem;
+        margin-top: 1rem;
+      }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 1rem;
-      line-height: 1.1;
-    }
+      /* Footer */
+      .footer {
+        background: var(--black);
+        border-top: 1px solid var(--border-white-5);
+        padding-top: 5rem;
+        padding-bottom: 2.5rem;
+        margin-top: auto;
+      }
+      .footer__top {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+      .footer__h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        color: var(--yellow-400);
+      }
+      .footer__btn {
+        border: 1px solid var(--zinc-600);
+        background: transparent;
+        color: var(--white);
+        padding: 0.5rem 1.5rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+      }
+      .footer__btn:hover {
+        border-color: var(--yellow-400);
+        color: var(--yellow-400);
+      }
 
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 3rem;
-    }
+      .footer__corp { text-align: right; }
+      .footer__corp span {
+        display: block;
+        color: var(--zinc-500);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+      }
+      .footer__corp a {
+        display: block;
+        color: var(--zinc-300);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 300;
+      }
+      .footer__corp a:hover { color: var(--white); }
 
-    /* Analysis Form */
-    .audit-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+      .footer__bar {
+        border-top: 1px solid var(--border-white-10);
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .footer__brand {
+        font-size: 1.25rem;
+        font-weight: 700;
+        font-style: italic;
+        letter-spacing: -0.05em;
+        color: var(--white);
+      }
+      .footer__links {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .footer__links a {
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--zinc-500);
+        text-decoration: none;
+        border-radius: var(--radius-sm);
+      }
+      .footer__links a:hover { color: var(--white); }
 
-    .input-group {
-      flex: 1;
-      min-width: 280px;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
+      .social { display: flex; gap: 1rem; }
+      .social a {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 999px;
+        background: var(--zinc-900);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--zinc-400);
+        text-decoration: none;
+      }
+      .social a:hover {
+        background: var(--zinc-800);
+        color: var(--white);
+      }
+      .social svg { width: 0.75rem; height: 0.75rem; }
 
-    .input-group label {
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
+      .copyright {
+        margin-top: 2rem;
+        text-align: center;
+        color: var(--zinc-700);
+        font-size: 0.625rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
 
-    input[type="url"] {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
+      /* Responsive Breakpoints */
+      @media (min-width: 768px) {
+        .nav__menu { display: flex; }
+        .btn-cta { display: inline-flex; }
+        .menu-btn { display: none; }
+        .values__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .form { padding: 2.5rem; }
+        .form__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .footer__top {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+        .footer__bar { flex-direction: row; }
+        .copyright { text-align: left; }
+      }
 
-    input[type="url"]:focus {
-      border-color: var(--primary);
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-    }
+      @media (min-width: 1024px) {
+        .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
 
-    button.btn-primary {
-      padding: 0.75rem 1.5rem;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      align-self: flex-end; /* Align with input box */
-      min-height: 48px; /* Touch target size */
-      transition: background 0.2s;
-    }
+      /* Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto !important; }
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
 
-    button.btn-primary:hover { background: var(--primary-hover); }
-    button.btn-primary:disabled { background: var(--text-muted); cursor: not-allowed; }
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    /* Results Section (Hidden initially) */
-    #results-area {
-      display: none; /* Toggled via JS */
-      padding: 4rem 0;
-      scroll-margin-top: 2rem;
-    }
-
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .score-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-
-    .gauge {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: conic-gradient(var(--score-color) var(--percentage), #e5e7eb 0);
-      margin: 0 auto 1.5rem;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .gauge::before {
-      content: '';
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background: white;
-      border-radius: 50%;
-    }
-
-    .gauge-value {
-      position: relative;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-
-    .score-card h3 {
-      margin: 0;
-      font-size: 1.125rem;
-      color: var(--text-muted);
-    }
-
-    /* Loading State */
-    .loader {
-      display: none;
-      width: 48px;
-      height: 48px;
-      border: 5px solid var(--border);
-      border-bottom-color: var(--primary);
-      border-radius: 50%;
-      animation: rotation 1s linear infinite;
-      margin: 2rem auto;
-    }
-
-    @keyframes rotation {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Reduced Motion */
-    @media (prefers-reduced-motion: reduce) {
-      .loader { animation-duration: 3s; }
-      * { transition-duration: 0.01ms !important; }
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 0;
-      margin-top: 4rem;
-      text-align: center;
-      color: var(--text-muted);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- WCAG Requirement: Skip Link -->
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <header>
-    <div class="container header-content">
-      <a href="/" class="logo">
-        <!-- Inline SVG Logo -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.5L18.5 20H5.5L12 5.5z"/><path d="M11 9h2v6h-2zm0 8h2v2h-2z"/></svg>
-        Lighthouse+
-      </a>
-      <nav aria-label="Main">
-        <!-- Simple nav for semantic structure -->
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-heading">
+    <nav class="nav" aria-label="Primary">
       <div class="container">
-        <h1 id="hero-heading">Measure your website's health</h1>
-        <p>Enter a URL to generate a comprehensive audit of performance, accessibility, and SEO.</p>
-        
-        <form id="auditForm" class="audit-form" novalidate>
-          <div class="input-group">
-            <label for="url-input">Website URL</label>
-            <input 
-              type="url" 
-              id="url-input" 
-              name="url" 
-              placeholder="https://example.com" 
-              required
-              aria-describedby="url-hint"
-            >
+        <div class="nav__inner">
+          <a class="brand" href="/" aria-label="CKO Kickboxing Home">
+            <span class="brand__cko">CKO</span>
+            <span class="brand__sub">Kickboxing</span>
+          </a>
+
+          <div class="nav__menu">
+            <a class="navlink" href="/">Home</a>
+            <a class="navlink navlink--active" href="/about" aria-current="page">About</a>
+            <a class="navlink" href="/classes">Classes</a>
+            <a class="navlink" href="/franchise">Franchise</a>
           </div>
-          <button type="submit" class="btn-primary" id="submit-btn">
-            Run Audit
-          </button>
-        </form>
-        <p id="url-hint" class="sr-only">Enter a valid URL starting with http or https</p>
-        
-        <!-- Live Region for Screen Reader Feedback -->
-        <div id="status-message" role="status" aria-live="polite" class="sr-only"></div>
-        
-        <div class="loader" id="loader"></div>
-      </div>
-    </section>
 
-    <!-- Results Section -->
-    <section id="results-area" aria-labelledby="results-heading">
-      <div class="container">
-        <h2 id="results-heading" style="text-align: center; margin-bottom: 2rem;">Audit Report</h2>
-        <p id="target-url-display" style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;"></p>
-        
-        <div class="results-grid">
-          
-          <!-- Performance -->
-          <article class="score-card">
-            <div class="gauge" data-score="92" style="--score-color: var(--score-good); --percentage: 0%;">
-              <span class="gauge-value">0</span>
-            </div>
-            <h3>Performance</h3>
-          </article>
+          <div class="nav__right">
+            <button
+              id="mobile-menu-btn"
+              class="menu-btn"
+              type="button"
+              aria-label="Open menu"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <svg id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
 
-          <!-- Accessibility -->
-          <article class="score-card">
-            <div class="gauge" data-score="100" style="--score-color: var(--score-good); --percentage: 0%;">
-              <span class="gauge-value">0</span>
-            </div>
-            <h3>Accessibility</h3>
-          </article>
+              <svg id="icon-close" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
 
-          <!-- Best Practices -->
-          <article class="score-card">
-            <div class="gauge" data-score="85" style="--score-color: var(--score-avg); --percentage: 0%;">
-              <span class="gauge-value">0</span>
-            </div>
-            <h3>Best Practices</h3>
-          </article>
-
-          <!-- SEO -->
-          <article class="score-card">
-            <div class="gauge" data-score="100" style="--score-color: var(--score-good); --percentage: 0%;">
-              <span class="gauge-value">0</span>
-            </div>
-            <h3>SEO</h3>
-          </article>
-
+            <a class="btn-cta" href="#book">Book Class</a>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Lighthouse+ Demo. All rights reserved.</p>
-    </div>
-  </footer>
+      <div id="mobile-backdrop" class="backdrop" aria-hidden="true"></div>
 
-  <!-- Application Logic -->
-  <script defer>
-    // Safe DOM elements selection
-    const form = document.getElementById('auditForm');
-    const input = document.getElementById('url-input');
-    const loader = document.getElementById('loader');
-    const resultsArea = document.getElementById('results-area');
-    const submitBtn = document.getElementById('submit-btn');
-    const statusMsg = document.getElementById('status-message');
-    const targetUrlDisplay = document.getElementById('target-url-display');
+      <div
+        id="mobile-menu"
+        class="mobile-menu"
+        role="dialog"
+        aria-label="Menu"
+        aria-modal="true"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="mobile-menu__inner">
+          <a class="mobile-link" href="/">Home</a>
+          <a class="mobile-link mobile-link--active" href="/about" aria-current="page">About</a>
+          <a class="mobile-link" href="/classes">Classes</a>
+          <a class="mobile-link" href="/franchise">Franchise</a>
+          <a class="mobile-cta" href="#book">Book Class</a>
+        </div>
+      </div>
 
-    // Utility: Validate URL
-    function isValidUrl(string) {
-      try {
-        new URL(string);
-        return true;
-      } catch (_) {
-        return false;
-      }
-    }
+      <noscript>
+        <div class="noscript-bar">
+          <div class="container noscript-inner">
+            <a class="navlink" href="/">Home</a>
+            <a class="navlink navlink--active" href="/about" aria-current="page">About</a>
+            <a class="navlink" href="/classes">Classes</a>
+            <a class="navlink" href="/franchise">Franchise</a>
+            <a class="btn-cta noscript-cta" href="#book">Book Class</a>
+          </div>
+        </div>
+      </noscript>
+    </nav>
 
-    // Utility: Animate Numbers
-    function animateValue(obj, start, end, duration) {
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        const currentVal = Math.floor(progress * (end - start) + start);
-        
-        // Update text
-        obj.querySelector('.gauge-value').textContent = currentVal;
-        
-        // Update Conic Gradient
-        const color = currentVal >= 90 ? 'var(--score-good)' : 
-                      currentVal >= 50 ? 'var(--score-avg)' : 
-                      'var(--score-poor)';
-        
-        obj.style.setProperty('--score-color', color);
-        obj.style.setProperty('--percentage', `${currentVal}%`);
+    <main id="main-content">
+      <header class="hero">
+        <div class="hero__inner">
+          <h1 class="hero__title">Our <span>Story</span></h1>
+          <p class="hero__lead">
+            Founded on the belief that fitness should be engaging, empowering, and effective. We
+            ditched the treadmills for heavy bags and created a community.
+          </p>
+        </div>
+      </header>
 
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
+      <section class="section" aria-label="History and mission">
+        <div class="two-col">
+          <div class="stack-12">
+            <div class="block">
+              <div class="kicker">
+                <div class="kicker__line"></div>
+                <span class="kicker__text">The Beginning</span>
+              </div>
+              <h2 class="h2">More Than Just A Gym</h2>
+              <p class="p">
+                It started in Hoboken, NJ, with a simple idea: take the intensity of a fighter's
+                workout and make it accessible to everyone. No sparring, no getting hit—just the
+                results. We wanted to create a place where people could relieve stress, burn fat,
+                and feel like a champion, regardless of their fitness level.
+              </p>
+            </div>
+
+            <div class="block">
+              <div class="kicker">
+                <div class="kicker__line"></div>
+                <span class="kicker__text">Our Mission</span>
+              </div>
+              <h2 class="h2">Empowering Every Body</h2>
+              <p class="p">
+                At CKO, you're not a number. You're part of a family. Our mission is to provide an
+                inclusive environment where you can work at your own pace on your own heavy bag. We
+                combine resistance training with high-intensity cardio to deliver a full-body
+                workout that transforms lives.
+              </p>
+            </div>
+
+            <div class="stats">
+              <div>
+                <span class="stat__num">25+</span>
+                <span class="stat__label">Years of Fitness</span>
+              </div>
+              <div>
+                <span class="stat__num">100k+</span>
+                <span class="stat__label">Lives Changed</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="visuals">
+            <div class="img-card img-wide">
+              <!-- Optimized Image: Added sizes, explicit decoding -->
+              <img
+                alt="CKO Kickboxing gym interior with heavy bags"
+                src="https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                width="800"
+                height="600"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              >
+            </div>
+
+            <div class="grid-2">
+              <div class="img-card img-square">
+                <img
+                  alt="Boxing gloves and training equipment"
+                  src="https://i.ibb.co/xtDQMgVY/home-section-1.jpg"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  width="400"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+
+              <div class="stat-box" role="group" aria-label="Rated number one fat burning workout">
+                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="8" r="6"></circle>
+                  <path d="M15.477 12.89l1.515 8.526-5-3-5 3 1.515-8.526"></path>
+                </svg>
+                <div class="stat-box__title">Rated #1</div>
+                <div class="stat-box__sub">Fat Burning Workout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="values" aria-label="Values">
+        <div class="container">
+          <div class="values__grid">
+            <div class="value">
+              <div class="value__iconWrap">
+                <svg class="value__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 010 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="value__h3">Community First</h3>
+              <p class="value__p">
+                We build strong relationships. When you walk through our doors, you enter a judgement-free
+                zone designed for support.
+              </p>
+            </div>
+
+            <div class="value">
+              <div class="value__iconWrap">
+                <svg class="value__icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" aria-hidden="true" focusable="false">
+                  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                </svg>
+              </div>
+              <h3 class="value__h3">High Energy</h3>
+              <p class="value__p">
+                Our classes are fueled by pumping music and enthusiastic instructors who keep the motivation
+                high from start to finish.
+              </p>
+            </div>
+
+            <div class="value">
+              <div class="value__iconWrap">
+                <svg class="value__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </div>
+              <h3 class="value__h3">Real Results</h3>
+              <p class="value__p">
+                We focus on functional fitness. Improve your endurance, strength, and agility with proven
+                kickboxing techniques.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="book" class="book" aria-label="Book a free class">
+        <div class="book__topline"></div>
+
+        <div class="book__inner">
+          <div class="book__center">
+            <span class="kickerBlock">Start Your Journey</span>
+            <h2 class="book__h2">Book Your Free Class</h2>
+            <p class="book__p">
+              Fill out the form below to secure your spot. No experience required. Gloves provided.
+            </p>
+          </div>
+
+          <form class="form" action="#" method="post">
+            <div class="form__grid">
+              <div class="field">
+                <label for="firstName">First Name</label>
+                <input
+                  id="firstName"
+                  name="firstName"
+                  class="input"
+                  placeholder="Jane"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                >
+              </div>
+
+              <div class="field">
+                <label for="lastName">Last Name</label>
+                <input
+                  id="lastName"
+                  name="lastName"
+                  class="input"
+                  placeholder="Doe"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form__grid">
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input
+                  id="email"
+                  name="email"
+                  class="input"
+                  placeholder="jane@example.com"
+                  type="email"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  class="input"
+                  placeholder="(555) 123-4567"
+                  type="tel"
+                  inputmode="tel"
+                  autocomplete="tel"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="field field--spaced">
+              <label for="location">Preferred Location</label>
+              <div class="selectWrap">
+                <select id="location" name="location" required>
+                  <option value="" selected disabled>Select a Club...</option>
+                  <option value="ny-manhattan">New York - Manhattan</option>
+                  <option value="nj-hoboken">New Jersey - Hoboken</option>
+                  <option value="ca-san-diego">California - San Diego</option>
+                </select>
+
+                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <button class="submit" type="submit">
+              Claim Free Class
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <line x1="5" x2="19" y1="12" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <p class="fineprint">
+              By submitting this form, you agree to our Terms of Service and Privacy Policy.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
+      <div class="container">
+        <div class="footer__top">
+          <div>
+            <h2 class="footer__h2">Near You</h2>
+            <button class="footer__btn" type="button">Find Class</button>
+          </div>
+
+          <div class="footer__corp">
+            <span>Corporate Office</span>
+            <a href="tel:+18009876543">+1 (800) 987-6543</a>
+          </div>
+        </div>
+
+        <div class="footer__bar">
+          <div class="footer__brand">CKO</div>
+
+          <div class="footer__links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/results">Results</a>
+            <a href="/contact">Contact</a>
+          </div>
+
+          <nav class="social" aria-label="Social links">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <p class="copyright">
+          © <time datetime="2026" itemprop="copyrightYear">2026</time>
+          CKO Kickboxing Holdings, LLC. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- 
+    NOTE: Calculate hash for this script to remove 'unsafe-inline' from CSP.
+    -->
+    <script>
+      (() => {
+        "use strict";
+
+        // Mobile menu elements
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const backdrop = document.getElementById("mobile-backdrop");
+        const iconMenu = document.getElementById("icon-menu");
+        const iconClose = document.getElementById("icon-close");
+
+        if (!btn || !menu || !backdrop) return;
+
+        const FOCUSABLE =
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+        let lastActive = null;
+        let prevOverflow = "";
+        let prevPaddingRight = "";
+
+        function getFocusable() {
+          return Array.from(menu.querySelectorAll(FOCUSABLE)).filter(
+            (el) => el.offsetParent !== null
+          );
         }
-      };
-      window.requestAnimationFrame(step);
-    }
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const url = input.value.trim();
+        function setIcons(open) {
+          if (!iconMenu || !iconClose) return;
+          iconMenu.classList.toggle("hidden", open);
+          iconClose.classList.toggle("hidden", !open);
+        }
 
-      // Basic Validation
-      if (!url || !isValidUrl(url)) {
-        alert('Please enter a valid URL (e.g., https://example.com)');
-        input.focus();
-        return;
-      }
+        function setScrollLock(lock) {
+          if (lock) {
+            prevOverflow = document.body.style.overflow;
+            prevPaddingRight = document.body.style.paddingRight;
 
-      // 1. UI State: Loading
-      loader.style.display = 'block';
-      resultsArea.style.display = 'none';
-      submitBtn.disabled = true;
-      statusMsg.textContent = `Analyzing ${url}, please wait...`;
+            const scrollbarWidth =
+              window.innerWidth - document.documentElement.clientWidth;
+            if (scrollbarWidth > 0) {
+              document.body.style.paddingRight = scrollbarWidth + "px";
+            }
 
-      // 2. Simulate Network Request (SetTimeout)
-      setTimeout(() => {
-        // Hide loader
-        loader.style.display = 'none';
-        submitBtn.disabled = false;
-        
-        // Show Results
-        resultsArea.style.display = 'block';
-        targetUrlDisplay.textContent = `Report for: ${url}`;
-        
-        // Accessibility focus management
-        resultsArea.focus(); // Ensure container has tabindex="-1" via JS if needed, or focus header
-        document.getElementById('results-heading').scrollIntoView({ behavior: 'smooth' });
-        statusMsg.textContent = "Analysis complete. Results displayed below.";
-
-        // Animate Gauges (Simulation)
-        const gauges = document.querySelectorAll('.gauge');
-        gauges.forEach(gauge => {
-          // Generate random realistic scores for demo
-          // First one (Performance) gets slightly random
-          // Others get fixed for "Success" look
-          let score = parseInt(gauge.dataset.score); 
-          if(gauge.parentElement.querySelector('h3').textContent === 'Performance') {
-             score = Math.floor(Math.random() * (100 - 80) + 80); // Random 80-100
+            document.body.style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = prevOverflow || "";
+            document.body.style.paddingRight = prevPaddingRight || "";
           }
-          
-          // Reset
-          gauge.style.setProperty('--percentage', '0%');
-          gauge.querySelector('.gauge-value').textContent = '0';
-          
-          // Trigger Animation
-          animateValue(gauge, 0, score, 1500);
+        }
+
+        function setBackgroundInert(isInert) {
+          const main = document.getElementById("main-content");
+          const footer = document.querySelector("footer");
+
+          [main, footer].forEach((node) => {
+            if (!node) return;
+            if ("inert" in node) node.inert = isInert;
+            node.setAttribute("aria-hidden", isInert ? "true" : "false");
+          });
+        }
+
+        function isOpen() {
+          return menu.classList.contains("is-open");
+        }
+
+        function openMenu() {
+          if (isOpen()) return;
+
+          lastActive = document.activeElement;
+
+          menu.classList.add("is-open");
+          backdrop.classList.add("is-open");
+
+          menu.setAttribute("aria-hidden", "false");
+          btn.setAttribute("aria-expanded", "true");
+          btn.setAttribute("aria-label", "Close menu");
+
+          setIcons(true);
+          setScrollLock(true);
+          setBackgroundInert(true);
+
+          const focusable = getFocusable();
+          requestAnimationFrame(() => (focusable[0] || menu).focus());
+        }
+
+        function closeMenu() {
+          if (!isOpen()) return;
+
+          menu.classList.remove("is-open");
+          backdrop.classList.remove("is-open");
+
+          menu.setAttribute("aria-hidden", "true");
+          btn.setAttribute("aria-expanded", "false");
+          btn.setAttribute("aria-label", "Open menu");
+
+          setIcons(false);
+          setScrollLock(false);
+          setBackgroundInert(false);
+
+          if (lastActive && typeof lastActive.focus === "function") lastActive.focus();
+          else btn.focus();
+        }
+
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          isOpen() ? closeMenu() : openMenu();
         });
 
-      }, 2000); // 2 second fake delay
-    });
-  </script>
-</body>
+        backdrop.addEventListener("click", closeMenu);
+
+        // Close on link click inside menu
+        menu.addEventListener("click", (e) => {
+          const a = e.target.closest("a[href]");
+          if (a) closeMenu();
+        });
+
+        // Escape + focus trap
+        document.addEventListener("keydown", (e) => {
+          if (!isOpen()) return;
+
+          if (e.key === "Escape") {
+            e.preventDefault();
+            closeMenu();
+            return;
+          }
+
+          if (e.key === "Tab") {
+            const focusable = getFocusable();
+            if (focusable.length === 0) return;
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        });
+
+        // Close when switching to desktop
+        window.addEventListener("resize", () => {
+          if (isOpen() && window.matchMedia("(min-width: 768px)").matches) closeMenu();
+        });
+      })();
+    </script>
+  </body>
 </html>
