@@ -1,1419 +1,738 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justice &amp; Partners | Experienced Legal Representation</title>
+  <meta name="description" content="Dedicated legal team specializing in corporate law, family law, and litigation. Justice & Partners provides strategic counsel and aggressive representation.">
+  <link rel="canonical" href="https://example.com/justice-partners">
+  <meta name="robots" content="index, follow">
 
-    <!-- 
-    SECURITY TODO: Move to Production
-    1. The current CSP uses 'unsafe-inline' to ensure this single file works immediately without a build step.
-    2. To achieve 100/100 Best Practices, calculate the SHA-384 hash of the script at the bottom:
-       Command: echo -n "EXACT_SCRIPT_CONTENT" | openssl dgst -sha384 -binary | openssl base64
-    3. Replace 'unsafe-inline' in script-src below with 'sha384-YOUR_CALCULATED_HASH'
-    -->
-    <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; 
-                   script-src 'self' 'unsafe-inline'; 
-                   style-src 'self' 'unsafe-inline'; 
-                   img-src 'self' https: data:; 
-                   font-src 'self'; 
-                   connect-src 'self'; 
-                   base-uri 'self'; 
-                   form-action 'self'">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Justice & Partners | Experienced Legal Representation">
+  <meta property="og:description" content="Dedicated legal team specializing in corporate law, family law, and litigation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/justice-partners">
+  <meta property="og:image" content="https://example.com/og-image.jpg">
 
-    <title>About CKO Kickboxing | Real People, Real Results</title>
-    <meta
-      name="description"
-      content="Discover the CKO Kickboxing story. High-energy, bag-based fitness classes designed to empower every body. Book your free first class today."
-    >
-    <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#000000">
-    <meta name="color-scheme" content="dark">
+  <!-- 
+  ⚠️ SECURITY EXCEPTION: unsafe-inline CSP
+  Constraint: Single-file delivery requirement prevents server-side nonce injection or build-time hash generation.
+  Risk: Reduced protection against XSS.
+  Mitigation: 
+    1. Scripts are minimal and contain no user input processing.
+    2. No external scripts are loaded.
+    3. Before production, extract JS/CSS to external files or add SHA-384 hashes to CSP.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self'; 
+    script-src 'self' 'unsafe-inline'; 
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+    img-src 'self' data: https:; 
+    font-src 'self' https://fonts.gstatic.com;
+  ">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://example.com/about">
+  <!-- Preconnect to Font Provider -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='30' font-family='Arial, sans-serif' fill='%23facc15' font-weight='700'%3ECKO%3C/text%3E%3C/svg%3E"
-    >
+  <style>
+    /* 
+    CRITICAL CSS 
+    Performance Target: <14KB inline
+    */
 
-    <!-- Performance Hints -->
-    <link rel="preconnect" href="https://i.ibb.co" crossorigin>
-    <link
-      rel="preload"
-      as="image"
-      href="https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg"
-      imagesizes="(min-width: 1024px) 50vw, 100vw"
-    >
-
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="About CKO Kickboxing | Real People, Real Results">
-    <meta
-      property="og:description"
-      content="Discover the CKO Kickboxing story. High-energy, bag-based fitness classes designed to empower every body. Book your free first class today."
-    >
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://example.com/about">
-    <meta property="og:site_name" content="CKO Kickboxing">
-    <meta property="og:image" content="https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg">
-    <meta property="og:image:alt" content="CKO Kickboxing gym interior">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About CKO Kickboxing">
-    <meta
-      name="twitter:description"
-      content="Discover the CKO Kickboxing story. High-energy, bag-based fitness classes designed to empower every body."
-    >
-    <meta
-      name="twitter:image"
-      content="https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg"
-    >
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "FitnessCenter",
-            "name": "CKO Kickboxing",
-            "image": "https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg",
-            "url": "https://example.com",
-            "priceRange": "$$"
-          },
-          {
-            "@type": "AboutPage",
-            "name": "About CKO Kickboxing",
-            "description": "Learn the story behind CKO Kickboxing—high-energy, bag-based kickboxing classes built to empower every body.",
-            "url": "https://example.com/about",
-            "primaryImageOfPage": {
-              "@type": "ImageObject",
-              "url": "https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg"
-            }
-          }
-        ]
-      }
-    </script>
-
-    <style>
-      :root {
-        --black: #000000;
-        --zinc-950: #09090b;
-        --zinc-900: #18181b;
-        --zinc-800: #27272a;
-        --zinc-700: #3f3f46;
-        --zinc-600: #52525b;
-        --zinc-500: #71717a;
-        --zinc-400: #a1a1aa; /* WCAG AA Pass on Black (6.8:1) */
-        --zinc-300: #d4d4d8;
-        --zinc-200: #e4e4e7;
-        --white: #ffffff;
-
-        --yellow-400: #facc15;
-        --yellow-300: #fde047;
-
-        --border-white-5: rgba(255, 255, 255, 0.05);
-        --border-white-10: rgba(255, 255, 255, 0.1);
-
-        --radius-sm: 0.125rem;
-        --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
-      }
-
-      /* Utility */
-      .hidden { display: none !important; }
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
-
-      /* Base */
-      html {
-        scroll-behavior: smooth;
-        box-sizing: border-box;
-      }
-      *, *::before, *::after {
-        box-sizing: inherit;
-      }
-
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-        background: var(--black);
-        color: var(--zinc-200);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        line-height: 1.5;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      main { flex: 1; }
-
-      ::selection {
-        background: var(--yellow-400);
-        color: #000;
-      }
-
-      /* Focus Handling */
-      :focus-visible {
-        outline: 2px solid var(--yellow-400);
-        outline-offset: 2px;
-      }
-
-      /* Skip Link */
-      .skip-link {
-        position: absolute;
-        left: 0.75rem;
-        top: 0.75rem;
-        padding: 0.75rem 1rem;
-        transform: translateY(-200%);
-        transition: transform 150ms ease;
-        z-index: 10000;
-        background-color: var(--yellow-400);
-        color: #000;
-        font-weight: 700;
-        text-decoration: none;
-        border-radius: var(--radius-sm);
-      }
-      .skip-link:focus {
-        transform: translateY(0);
-      }
-
-      /* Layout */
-      .container {
-        max-width: 80rem;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-      }
-
-      /* Navigation */
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 50;
-        background: rgba(0, 0, 0, 0.9);
-        border-bottom: 1px solid var(--border-white-5);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-      .nav__inner {
-        height: 5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        text-decoration: none;
-        border-radius: var(--radius-sm);
-      }
-      .brand__cko {
-        font-size: 1.5rem;
-        font-weight: 700;
-        font-style: italic;
-        letter-spacing: -0.05em;
-        color: var(--white);
-      }
-      .brand__sub {
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--yellow-400);
-        margin-top: 0.25rem;
-      }
-
-      .nav__menu {
-        display: none;
-        align-items: center;
-        gap: 2rem;
-      }
-      .navlink {
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--zinc-200);
-        text-decoration: none;
-        border-radius: var(--radius-sm);
-        transition: color 0.2s;
-      }
-      .navlink:hover, .navlink--active {
-        color: var(--yellow-400);
-      }
-
-      .nav__right {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .btn-cta {
-        display: none;
-        background: var(--yellow-400);
-        color: #000;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 0.75rem 1.5rem;
-        text-decoration: none;
-        border-radius: var(--radius-sm);
-        transition: background-color 0.2s;
-      }
-      .btn-cta:hover {
-        background: var(--yellow-300);
-      }
-
-      /* Mobile Menu */
-      .menu-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.5rem;
-        height: 2.5rem;
-        background: transparent;
-        border: 1px solid transparent;
-        color: var(--white);
-        border-radius: var(--radius-sm);
-        cursor: pointer;
-      }
-      .menu-btn:hover { color: var(--yellow-400); }
-      .menu-btn svg { width: 1.5rem; height: 1.5rem; pointer-events: none; }
-
-      .backdrop {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        z-index: 40;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 300ms ease;
-      }
-      .backdrop.is-open { opacity: 1; pointer-events: auto; }
-
-      .mobile-menu {
-        position: absolute;
-        top: 5rem;
-        left: 0;
-        width: 100%;
-        background: var(--zinc-950);
-        border-bottom: 1px solid var(--zinc-800);
-        z-index: 50;
-        box-shadow: var(--shadow-2xl);
-        display: none;
-      }
-      .mobile-menu.is-open { display: block; }
-
-      .mobile-menu__inner {
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .mobile-link {
-        font-size: 0.875rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: var(--white);
-        padding: 0.5rem 0;
-        border-radius: var(--radius-sm);
-      }
-      .mobile-link--active { color: var(--yellow-400); }
-
-      .mobile-cta {
-        margin-top: 0.5rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 0.75rem 0;
-        background: var(--yellow-400);
-        color: #000;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        text-decoration: none;
-        border-radius: var(--radius-sm);
-      }
-
-      /* Noscript Fallback */
-      .noscript-bar {
-        border-top: 1px solid #18181b;
-        background: #09090b;
-      }
-      .noscript-inner {
-        padding: 1rem 1.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .noscript-cta { display: inline-flex !important; }
-
-      /* Hero Section */
-      .hero {
-        padding: 10rem 1.5rem 5rem;
-        border-bottom: 1px solid var(--zinc-900);
-        background: rgba(9, 9, 11, 0.5);
-      }
-      .hero__inner {
-        max-width: 56rem;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .hero__title {
-        margin: 0 0 1.5rem;
-        font-weight: 600;
-        color: var(--white);
-        text-transform: uppercase;
-        letter-spacing: -0.05em;
-        font-size: clamp(2.5rem, 5vw, 4.5rem);
-        line-height: 1;
-      }
-      .hero__title span { color: var(--yellow-400); }
-      .hero__lead {
-        margin: 0 auto;
-        max-width: 42rem;
-        font-size: 1.125rem;
-        line-height: 1.75;
-        /* CONTRAST FIX: zinc-400 on dark bg passes AA */
-        color: var(--zinc-400);
-        font-weight: 300;
-      }
-
-      /* Content Sections */
-      .section {
-        padding: 6rem 1.5rem;
-        background: var(--black);
-      }
-      .two-col {
-        max-width: 80rem;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 4rem;
-        align-items: start;
-      }
+    /* Variables & Theme */
+    :root {
+      /* Color Palette - Professional/Trustworthy */
+      --color-primary: #0f172a; /* Navy Blue */
+      --color-secondary: #c5a059; /* Muted Gold */
+      --color-text: #334155;
+      --color-bg: #ffffff;
+      --color-bg-alt: #f8fafc;
+      --color-border: #e2e8f0;
       
-      .stack-12 { display: flex; flex-direction: column; gap: 3rem; }
-      .block { display: flex; flex-direction: column; gap: 1.5rem; }
+      /* Typography */
+      --font-heading: 'Playfair Display', 'Times New Roman', serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      
+      /* Spacing */
+      --container-width: 1200px;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+      --space-xl: 6rem;
+    }
 
-      .kicker { display: flex; align-items: center; gap: 1rem; }
-      .kicker__line { height: 1px; width: 2rem; background: var(--yellow-400); }
-      .kicker__text {
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--yellow-400);
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-primary: #1e293b;
+        --color-secondary: #d4af37;
+        --color-text: #e2e8f0;
+        --color-bg: #0f172a;
+        --color-bg-alt: #1e293b;
+        --color-border: #334155;
       }
+    }
 
-      .h2 {
-        margin: 0;
-        font-size: 1.875rem;
-        font-weight: 600;
-        color: var(--white);
-        text-transform: uppercase;
-        letter-spacing: -0.02em;
-      }
-      .p {
-        margin: 0;
-        /* CONTRAST FIX: zinc-400 (6.8:1 on black) instead of zinc-500 (3.9:1) */
-        color: var(--zinc-400);
-        line-height: 1.75;
-        font-weight: 300;
-      }
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html {
+      scroll-behavior: smooth;
+    }
 
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid var(--zinc-900);
-      }
-      .stat__num {
-        display: block;
-        font-size: 2.25rem;
-        font-weight: 600;
-        color: var(--white);
-        letter-spacing: -0.02em;
-        margin-bottom: 0.25rem;
-      }
-      .stat__label {
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        /* CONTRAST FIX: zinc-400 passes AA on black */
-        color: var(--zinc-400);
-      }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-      /* Image Grid */
-      .visuals {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .img-card {
-        border: 1px solid var(--zinc-800);
-        border-radius: var(--radius-sm);
-        overflow: hidden;
-        background: var(--zinc-900);
-      }
-      .img-card img {
+    /* Accessibility Focus */
+    *:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -9999px;
+      left: 1rem;
+      background: var(--color-secondary);
+      color: #000;
+      padding: 1rem;
+      z-index: 9999;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration-color: var(--color-secondary);
+      text-underline-offset: 4px;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--color-secondary);
+    }
+
+    /* Layout Utilities */
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 var(--space-sm);
+    }
+
+    .section {
+      padding: var(--space-xl) 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--color-secondary);
+      color: #0f172a; /* Force dark text on gold for contrast */
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border: 2px solid var(--color-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: transparent;
+      color: var(--color-secondary);
+      /* EXCEPTION: Design - text color change on hover meets 3:1 contrast against dark background, usually meets 4.5:1 on light */
+    }
+
+    .btn--outline {
+      background-color: transparent;
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+
+    .btn--outline:hover {
+      background-color: #ffffff;
+      color: var(--color-primary);
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--color-secondary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--color-text);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Mobile Menu Toggle (Hidden on Desktop) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: var(--color-primary);
+      color: #ffffff;
+      padding: calc(var(--space-xl) * 1.5) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Overlay effect using pseudo-element to ensure text contrast over background image */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #cbd5e1;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    /* Services Grid */
+    .services {
+      background-color: var(--color-bg-alt);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background: var(--color-bg);
+      padding: 2rem;
+      border: 1px solid var(--color-border);
+      border-top: 4px solid var(--color-secondary);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      height: auto;
+      background: #ccc; /* Placeholder bg */
+      border-radius: 4px;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: var(--color-primary);
+      color: #ffffff;
+    }
+
+    .contact h2 { color: #ffffff; }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #475569;
+      background: #1e293b;
+      color: #ffffff;
+      font-family: inherit;
+      border-radius: 4px;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid var(--color-secondary);
+      border-color: transparent;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #020617;
+      color: #94a3b8;
+      padding: 3rem 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+    }
+
+    .footer-links li { list-style: none; margin-bottom: 0.5rem; }
+    .footer-links a { color: #94a3b8; text-decoration: none; }
+    .footer-links a:hover { color: var(--color-secondary); }
+
+    .disclaimer {
+      font-size: 0.75rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #1e293b;
+      line-height: 1.5;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.9;
-        transition: transform 700ms ease-out, opacity 700ms ease-out;
-        display: block;
-      }
-      .img-card:hover img {
-        opacity: 1;
-        transform: scale(1.05);
-      }
-      .img-wide { aspect-ratio: 4 / 3; }
-      .grid-2 {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
-      .img-square { aspect-ratio: 1 / 1; }
-
-      .stat-box {
-        border: 1px solid var(--zinc-800);
-        border-radius: var(--radius-sm);
-        background: var(--zinc-950);
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-      .stat-box__title {
-        color: var(--white);
-        font-size: 0.875rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-      .stat-box__sub {
-        margin-top: 0.25rem;
-        /* CONTRAST FIX: zinc-400 (6.5:1 on zinc-950) instead of zinc-600 */
-        color: var(--zinc-400);
-        font-size: 0.625rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-      }
-      .icon-lg {
-        width: 2.5rem;
-        height: 2.5rem;
-        color: var(--yellow-400);
-        margin-bottom: 1rem;
-      }
-
-      /* Values Section */
-      .values {
-        background: var(--zinc-950);
-        border-top: 1px solid var(--zinc-900);
-        border-bottom: 1px solid var(--zinc-900);
-        padding: 5rem 0;
-      }
-      .values__grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .value { cursor: default; }
-      .value__iconWrap {
-        width: 3rem;
-        height: 3rem;
-        border-radius: 999px;
-        background: var(--zinc-900);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        transition: transform 300ms ease, background-color 300ms ease;
-      }
-      .value:hover .value__iconWrap {
-        transform: scale(1.1);
-        background: var(--yellow-400);
-      }
-      .value__icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        color: var(--white);
-        transition: color 300ms ease;
-      }
-      .value:hover .value__icon { color: #000; }
-      .value__h3 {
-        margin: 0 0 0.75rem;
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: var(--white);
-        text-transform: uppercase;
-        letter-spacing: -0.02em;
-      }
-      .value__p {
-        margin: 0;
-        font-size: 0.875rem;
-        line-height: 1.75;
-        /* CONTRAST FIX: zinc-400 (6.5:1 on zinc-950) */
-        color: var(--zinc-400);
-      }
-
-      /* Booking Section */
-      .book {
-        background: var(--zinc-950);
-        position: relative;
-        overflow: hidden;
-        padding: 6rem 0;
-      }
-      .book__topline {
         position: absolute;
-        top: 0;
+        top: 100%;
         left: 0;
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(to right, transparent, rgba(250, 204, 21, 0.2), transparent);
-      }
-      .book__inner {
-        max-width: 42rem;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-        position: relative;
-        z-index: 1;
-      }
-      .book__center { text-align: center; margin-bottom: 3rem; }
-      .kickerBlock {
-        display: block;
-        color: var(--yellow-400);
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 0.5rem;
-      }
-      .book__h2 {
-        margin: 0 0 1rem;
-        font-size: 2.25rem;
-        font-weight: 600;
-        color: var(--white);
-        text-transform: uppercase;
-        letter-spacing: -0.02em;
-      }
-      .book__p {
-        margin: 0;
-        /* CONTRAST FIX: zinc-400 */
-        color: var(--zinc-400);
-        font-size: 1.125rem;
-        font-weight: 300;
-      }
-
-      /* Form */
-      .form {
-        background: rgba(39, 39, 42, 0.5);
-        border: 1px solid var(--zinc-800);
-        border-radius: var(--radius-sm);
-        box-shadow: var(--shadow-2xl);
-        padding: 2rem;
-      }
-      .form__grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-      .field label {
-        display: block;
-        font-size: 0.625rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        /* CONTRAST FIX: zinc-400 passes on the form background */
-        color: var(--zinc-400);
-        margin-bottom: 0.5rem;
-      }
-      .input, select {
-        width: 100%;
-        background: var(--zinc-950);
-        border: 1px solid var(--zinc-800);
-        color: var(--zinc-200);
-        font-size: 1rem;
-        padding: 0.75rem 1rem;
-        border-radius: var(--radius-sm);
-        outline: none;
-      }
-      .input:focus, select:focus {
-        border-color: rgba(250, 204, 21, 0.5);
-        box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.5);
-      }
-      .selectWrap { position: relative; }
-      .selectWrap select { appearance: none; }
-      .selectWrap .chev {
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1rem;
-        height: 1rem;
-        color: var(--zinc-500);
-        pointer-events: none;
-      }
-      .field--spaced { margin-bottom: 2rem; }
-
-      .submit {
-        width: 100%;
-        border: 0;
-        border-radius: var(--radius-sm);
-        background: var(--yellow-400);
-        color: #000;
-        font-size: 0.875rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+        background: var(--color-bg);
+        flex-direction: column;
         padding: 1rem;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-      }
-      .submit:hover { background: var(--yellow-300); }
-
-      .fineprint {
-        text-align: center;
-        /* CONTRAST FIX: zinc-400 instead of zinc-600 */
-        color: var(--zinc-400);
-        font-size: 0.75rem;
-        margin-top: 1rem;
+        border-bottom: 1px solid var(--color-border);
+        gap: 0;
       }
 
-      /* Footer */
-      .footer {
-        background: var(--black);
-        border-top: 1px solid var(--border-white-5);
-        padding-top: 5rem;
-        padding-bottom: 2.5rem;
-        margin-top: auto;
-      }
-      .footer__top {
+      .nav-links.active {
         display: flex;
-        flex-direction: column;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
-        margin-bottom: 4rem;
-      }
-      .footer__h2 {
-        margin: 0 0 0.5rem;
-        font-size: 1.875rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: -0.02em;
-        color: var(--yellow-400);
-      }
-      .footer__btn {
-        border: 1px solid var(--zinc-600);
-        background: transparent;
-        color: var(--white);
-        padding: 0.5rem 1.5rem;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        border-radius: var(--radius-sm);
-        cursor: pointer;
-      }
-      .footer__btn:hover {
-        border-color: var(--yellow-400);
-        color: var(--yellow-400);
       }
 
-      .footer__corp { text-align: right; }
-      .footer__corp span {
-        display: block;
-        /* CONTRAST FIX: zinc-400 */
-        color: var(--zinc-400);
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 0.25rem;
-      }
-      .footer__corp a {
-        display: block;
-        /* zinc-300 is 11.5:1 on black - pass */
-        color: var(--zinc-300);
-        text-decoration: none;
-        font-size: 0.875rem;
-        font-weight: 300;
-      }
-      .footer__corp a:hover { color: var(--white); }
+      h1 { font-size: 2.5rem; }
+    }
 
-      .footer__bar {
-        border-top: 1px solid var(--border-white-10);
-        padding-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-        justify-content: space-between;
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
       }
-      .footer__brand {
-        font-size: 1.25rem;
-        font-weight: 700;
-        font-style: italic;
-        letter-spacing: -0.05em;
-        color: var(--white);
-      }
-      .footer__links {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .footer__links a {
-        font-size: 0.625rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        /* CONTRAST FIX: zinc-400 instead of zinc-500 */
-        color: var(--zinc-400);
-        text-decoration: none;
-        border-radius: var(--radius-sm);
-      }
-      .footer__links a:hover { color: var(--white); }
-
-      .social { display: flex; gap: 1rem; }
-      .social a {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 999px;
-        background: var(--zinc-900);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--zinc-400);
-        text-decoration: none;
-      }
-      .social a:hover {
-        background: var(--zinc-800);
-        color: var(--white);
-      }
-      .social svg { width: 0.75rem; height: 0.75rem; }
-
-      .copyright {
-        margin-top: 2rem;
-        text-align: center;
-        /* CONTRAST FIX: zinc-400 instead of zinc-700 */
-        color: var(--zinc-400);
-        font-size: 0.625rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-
-      /* Responsive Breakpoints */
-      @media (min-width: 768px) {
-        .nav__menu { display: flex; }
-        .btn-cta { display: inline-flex; }
-        .menu-btn { display: none; }
-        .values__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-        .form { padding: 2.5rem; }
-        .form__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .footer__top {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-start;
-        }
-        .footer__bar { flex-direction: row; }
-        .copyright { text-align: left; }
-      }
-
-      @media (min-width: 1024px) {
-        .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      }
-
-      /* Reduced Motion */
-      @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior: auto !important; }
-        *, *::before, *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- 
-    ACCESSIBILITY FIX REPORT: Color Contrast (WCAG 2.2 AA)
+    }
     
-    Issue: Multiple elements failed contrast checks (3.9:1 or lower).
-    Requirement: 4.5:1 minimum for normal text.
-    
-    Adjustments applied:
-    1. Replaced zinc-500 (#71717a) and zinc-600 (#52525b) with zinc-400 (#a1a1aa).
-    2. Zinc-400 on Black (#000000) = 6.8:1 Contrast Ratio (PASS)
-    3. Zinc-400 on Zinc-950 (#09090b) = 6.5:1 Contrast Ratio (PASS)
-    
-    Impacted Elements:
-    - .stat__label
-    - .stat-box__sub
-    - .value__p
-    - .field label
-    - .fineprint
-    - .footer__corp span
-    - .footer__links a
-    - .copyright
-    
-    Visual Impact: Text is slightly lighter (better visibility), design hierarchy preserved.
-    -->
+    /* Print Styles */
+    @media print {
+      nav, .btn, .hero::before { display: none; }
+      body { color: #000; background: #fff; }
+      .hero { padding: 2rem 0; color: #000; background: none; }
+      .hero h1, .hero p { color: #000; }
+      a[href]::after { content: " (" attr(href) ")"; }
+    }
+  </style>
+  
+  <!-- Loading Fonts asynchronously (Performance) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  </noscript>
+</head>
+<body>
 
-    <a class="skip-link" href="#main-content">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-    <nav class="nav" aria-label="Primary">
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">Justice <span>&amp;</span> Partners</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg>
+      </button>
+      <nav>
+        <ul class="nav-links" id="primary-nav">
+          <li><a href="#about">About Firm</a></li>
+          <li><a href="#practice-areas">Practice Areas</a></li>
+          <li><a href="#attorneys">Attorneys</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- 
+        PERFORMANCE: LCP Image
+        Note: Using a background placeholder color and gradient in CSS. 
+        In production, replace this comment with an <img> tag positioned absolutely if an actual photo is required for LCP.
+      -->
+      <div class="container hero-content">
+        <h1>Defending Your Rights With Unwavering Dedication</h1>
+        <p>Experienced legal counsel for when it matters most. We provide strategic, aggressive representation for complex legal challenges.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Schedule Consultation</a>
+          <a href="#practice-areas" class="btn btn--outline">View Practice Areas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
       <div class="container">
-        <div class="nav__inner">
-          <a class="brand" href="/" aria-label="CKO Kickboxing Home">
-            <span class="brand__cko">CKO</span>
-            <span class="brand__sub">Kickboxing</span>
-          </a>
-
-          <div class="nav__menu">
-            <a class="navlink" href="/">Home</a>
-            <a class="navlink navlink--active" href="/about" aria-current="page">About</a>
-            <a class="navlink" href="/classes">Classes</a>
-            <a class="navlink" href="/franchise">Franchise</a>
+        <div class="about-grid">
+          <div class="about-text">
+            <h2>A Legacy of Justice</h2>
+            <p style="margin-bottom: 1rem;">Since 1998, Justice &amp; Partners has stood as a pillar of legal excellence. We understand that navigating the legal system can be overwhelming. That is why our team creates personalized strategies tailored to your unique situation.</p>
+            <p>Our firm is built on the principles of integrity, transparency, and results. Whether you are facing a complex corporate dispute or a sensitive family matter, we are your steadfast allies.</p>
           </div>
-
-          <div class="nav__right">
-            <button
-              id="mobile-menu-btn"
-              class="menu-btn"
-              type="button"
-              aria-label="Open menu"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
+          <div class="about-visual">
+            <!-- 
+              IMAGE OPTIMIZATION REQUIRED:
+              Replace src with actual office photo. 
+              Dimensions: ~600x400
+            -->
+            <img 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' fill='%2364748b'%3EOffice Image Placeholder%3C/text%3E%3C/svg%3E" 
+              alt="Justice & Partners office interior showing a conference room"
+              width="600"
+              height="400"
+              loading="lazy"
+              class="about-image"
             >
-              <svg id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-
-              <svg id="icon-close" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-
-            <a class="btn-cta" href="#book">Book Class</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <div id="mobile-backdrop" class="backdrop" aria-hidden="true"></div>
-
-      <div
-        id="mobile-menu"
-        class="mobile-menu"
-        role="dialog"
-        aria-label="Menu"
-        aria-modal="true"
-        aria-hidden="true"
-        tabindex="-1"
-      >
-        <div class="mobile-menu__inner">
-          <a class="mobile-link" href="/">Home</a>
-          <a class="mobile-link mobile-link--active" href="/about" aria-current="page">About</a>
-          <a class="mobile-link" href="/classes">Classes</a>
-          <a class="mobile-link" href="/franchise">Franchise</a>
-          <a class="mobile-cta" href="#book">Book Class</a>
-        </div>
-      </div>
-
-      <noscript>
-        <div class="noscript-bar">
-          <div class="container noscript-inner">
-            <a class="navlink" href="/">Home</a>
-            <a class="navlink navlink--active" href="/about" aria-current="page">About</a>
-            <a class="navlink" href="/classes">Classes</a>
-            <a class="navlink" href="/franchise">Franchise</a>
-            <a class="btn-cta noscript-cta" href="#book">Book Class</a>
-          </div>
-        </div>
-      </noscript>
-    </nav>
-
-    <main id="main-content">
-      <header class="hero">
-        <div class="hero__inner">
-          <h1 class="hero__title">Our <span>Story</span></h1>
-          <p class="hero__lead">
-            Founded on the belief that fitness should be engaging, empowering, and effective. We
-            ditched the treadmills for heavy bags and created a community.
-          </p>
-        </div>
-      </header>
-
-      <section class="section" aria-label="History and mission">
-        <div class="two-col">
-          <div class="stack-12">
-            <div class="block">
-              <div class="kicker">
-                <div class="kicker__line"></div>
-                <span class="kicker__text">The Beginning</span>
-              </div>
-              <h2 class="h2">More Than Just A Gym</h2>
-              <p class="p">
-                It started in Hoboken, NJ, with a simple idea: take the intensity of a fighter's
-                workout and make it accessible to everyone. No sparring, no getting hit—just the
-                results. We wanted to create a place where people could relieve stress, burn fat,
-                and feel like a champion, regardless of their fitness level.
-              </p>
-            </div>
-
-            <div class="block">
-              <div class="kicker">
-                <div class="kicker__line"></div>
-                <span class="kicker__text">Our Mission</span>
-              </div>
-              <h2 class="h2">Empowering Every Body</h2>
-              <p class="p">
-                At CKO, you're not a number. You're part of a family. Our mission is to provide an
-                inclusive environment where you can work at your own pace on your own heavy bag. We
-                combine resistance training with high-intensity cardio to deliver a full-body
-                workout that transforms lives.
-              </p>
-            </div>
-
-            <div class="stats">
-              <div>
-                <span class="stat__num">25+</span>
-                <span class="stat__label">Years of Fitness</span>
-              </div>
-              <div>
-                <span class="stat__num">100k+</span>
-                <span class="stat__label">Lives Changed</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="visuals">
-            <div class="img-card img-wide">
-              <img
-                alt="CKO Kickboxing gym interior with heavy bags"
-                src="https://i.ibb.co/0VZVLQgz/cko-new-banner-22.jpg"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                width="800"
-                height="600"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              >
-            </div>
-
-            <div class="grid-2">
-              <div class="img-card img-square">
-                <img
-                  alt="Boxing gloves and training equipment"
-                  src="https://i.ibb.co/xtDQMgVY/home-section-1.jpg"
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  width="400"
-                  height="400"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </div>
-
-              <div class="stat-box" role="group" aria-label="Rated number one fat burning workout">
-                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                  <circle cx="12" cy="8" r="6"></circle>
-                  <path d="M15.477 12.89l1.515 8.526-5-3-5 3 1.515-8.526"></path>
-                </svg>
-                <div class="stat-box__title">Rated #1</div>
-                <div class="stat-box__sub">Fat Burning Workout</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="values" aria-label="Values">
-        <div class="container">
-          <div class="values__grid">
-            <div class="value">
-              <div class="value__iconWrap">
-                <svg class="value__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 010 7.75"></path>
-                </svg>
-              </div>
-              <h3 class="value__h3">Community First</h3>
-              <p class="value__p">
-                We build strong relationships. When you walk through our doors, you enter a judgement-free
-                zone designed for support.
-              </p>
-            </div>
-
-            <div class="value">
-              <div class="value__iconWrap">
-                <svg class="value__icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" aria-hidden="true" focusable="false">
-                  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
-                </svg>
-              </div>
-              <h3 class="value__h3">High Energy</h3>
-              <p class="value__p">
-                Our classes are fueled by pumping music and enthusiastic instructors who keep the motivation
-                high from start to finish.
-              </p>
-            </div>
-
-            <div class="value">
-              <div class="value__iconWrap">
-                <svg class="value__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
-                </svg>
-              </div>
-              <h3 class="value__h3">Real Results</h3>
-              <p class="value__p">
-                We focus on functional fitness. Improve your endurance, strength, and agility with proven
-                kickboxing techniques.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="book" class="book" aria-label="Book a free class">
-        <div class="book__topline"></div>
-
-        <div class="book__inner">
-          <div class="book__center">
-            <span class="kickerBlock">Start Your Journey</span>
-            <h2 class="book__h2">Book Your Free Class</h2>
-            <p class="book__p">
-              Fill out the form below to secure your spot. No experience required. Gloves provided.
-            </p>
-          </div>
-
-          <form class="form" action="#" method="post">
-            <div class="form__grid">
-              <div class="field">
-                <label for="firstName">First Name</label>
-                <input
-                  id="firstName"
-                  name="firstName"
-                  class="input"
-                  placeholder="Jane"
-                  type="text"
-                  autocomplete="given-name"
-                  required
-                >
-              </div>
-
-              <div class="field">
-                <label for="lastName">Last Name</label>
-                <input
-                  id="lastName"
-                  name="lastName"
-                  class="input"
-                  placeholder="Doe"
-                  type="text"
-                  autocomplete="family-name"
-                  required
-                >
-              </div>
-            </div>
-
-            <div class="form__grid">
-              <div class="field">
-                <label for="email">Email Address</label>
-                <input
-                  id="email"
-                  name="email"
-                  class="input"
-                  placeholder="jane@example.com"
-                  type="email"
-                  autocomplete="email"
-                  required
-                >
-              </div>
-
-              <div class="field">
-                <label for="phone">Phone Number</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  class="input"
-                  placeholder="(555) 123-4567"
-                  type="tel"
-                  inputmode="tel"
-                  autocomplete="tel"
-                  required
-                >
-              </div>
-            </div>
-
-            <div class="field field--spaced">
-              <label for="location">Preferred Location</label>
-              <div class="selectWrap">
-                <select id="location" name="location" required>
-                  <option value="" selected disabled>Select a Club...</option>
-                  <option value="ny-manhattan">New York - Manhattan</option>
-                  <option value="nj-hoboken">New Jersey - Hoboken</option>
-                  <option value="ca-san-diego">California - San Diego</option>
-                </select>
-
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </div>
-            </div>
-
-            <button class="submit" type="submit">
-              Claim Free Class
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <line x1="5" x2="19" y1="12" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-
-            <p class="fineprint">
-              By submitting this form, you agree to our Terms of Service and Privacy Policy.
-            </p>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
+    <!-- Practice Areas -->
+    <section id="practice-areas" class="section services">
       <div class="container">
-        <div class="footer__top">
-          <div>
-            <h2 class="footer__h2">Near You</h2>
-            <button class="footer__btn" type="button">Find Class</button>
-          </div>
-
-          <div class="footer__corp">
-            <span>Corporate Office</span>
-            <a href="tel:+18009876543">+1 (800) 987-6543</a>
-          </div>
+        <div class="section-header" style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <h2>Practice Areas</h2>
+          <p>We offer comprehensive legal services across a spectrum of disciplines, ensuring you have expert guidance for every legal need.</p>
         </div>
-
-        <div class="footer__bar">
-          <div class="footer__brand">CKO</div>
-
-          <div class="footer__links">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/results">Results</a>
-            <a href="/contact">Contact</a>
-          </div>
-
-          <nav class="social" aria-label="Social links">
-            <a href="#" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-              </svg>
-            </a>
-
-            <a href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </a>
-          </nav>
+        
+        <div class="grid">
+          <article class="card">
+            <h3>Corporate Law</h3>
+            <p>Mergers, acquisitions, and compliance strategies for businesses ranging from startups to Fortune 500 companies.</p>
+          </article>
+          
+          <article class="card">
+            <h3>Family Law</h3>
+            <p>Compassionate representation for divorce, custody disputes, and estate planning to protect your family's future.</p>
+          </article>
+          
+          <article class="card">
+            <h3>Criminal Defense</h3>
+            <p>Aggressive defense against misdemeanors and felonies. We protect your constitutional rights in the courtroom.</p>
+          </article>
+          
+          <article class="card">
+            <h3>Civil Litigation</h3>
+            <p>Resolving disputes through negotiation, arbitration, or trial with a track record of favorable settlements.</p>
+          </article>
+          
+          <article class="card">
+            <h3>Real Estate</h3>
+            <p>Guidance on commercial and residential transactions, zoning issues, and property disputes.</p>
+          </article>
+          
+          <article class="card">
+            <h3>Personal Injury</h3>
+            <p>Fighting for fair compensation for victims of negligence, workplace accidents, and medical malpractice.</p>
+          </article>
         </div>
-
-        <p class="copyright">
-          © <time datetime="2026" itemprop="copyrightYear">2026</time>
-          CKO Kickboxing Holdings, LLC. All Rights Reserved.
-        </p>
       </div>
-    </footer>
+    </section>
 
-    <script>
-      (() => {
-        "use strict";
+    <!-- Attorneys/Team -->
+    <section id="attorneys" class="section">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Our Attorneys</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+          
+          <div style="text-align: center;">
+            <img 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23cbd5e1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3EPhoto%3C/text%3E%3C/svg%3E" 
+              alt="Portrait of Sarah Justice"
+              width="300" 
+              height="300" 
+              loading="lazy"
+              style="border-radius: 50%; margin-bottom: 1rem; object-fit: cover;"
+            >
+            <h3>Sarah Justice</h3>
+            <p style="color: var(--color-secondary); font-weight: 600;">Managing Partner</p>
+          </div>
 
-        // Mobile menu elements
-        const btn = document.getElementById("mobile-menu-btn");
-        const menu = document.getElementById("mobile-menu");
-        const backdrop = document.getElementById("mobile-backdrop");
-        const iconMenu = document.getElementById("icon-menu");
-        const iconClose = document.getElementById("icon-close");
+          <div style="text-align: center;">
+            <img 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23cbd5e1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3EPhoto%3C/text%3E%3C/svg%3E" 
+              alt="Portrait of Michael Ross"
+              width="300" 
+              height="300" 
+              loading="lazy"
+              style="border-radius: 50%; margin-bottom: 1rem; object-fit: cover;"
+            >
+            <h3>Michael Ross</h3>
+            <p style="color: var(--color-secondary); font-weight: 600;">Senior Litigation Associate</p>
+          </div>
 
-        if (!btn || !menu || !backdrop) return;
+          <div style="text-align: center;">
+            <img 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23cbd5e1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3EPhoto%3C/text%3E%3C/svg%3E" 
+              alt="Portrait of Jessica Pearson"
+              width="300" 
+              height="300" 
+              loading="lazy"
+              style="border-radius: 50%; margin-bottom: 1rem; object-fit: cover;"
+            >
+            <h3>Jessica Pearson</h3>
+            <p style="color: var(--color-secondary); font-weight: 600;">Corporate Counsel</p>
+          </div>
+        
+        </div>
+      </div>
+    </section>
 
-        const FOCUSABLE =
-          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    <!-- Contact Form -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
+          
+          <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p style="margin-bottom: 2rem; color: #cbd5e1;">Case evaluations are confidential. Fill out the form or call us directly to speak with an attorney.</p>
+            
+            <address style="font-style: normal; line-height: 2;">
+              <strong>Justice &amp; Partners, LLC</strong><br>
+              123 Legal Avenue, Suite 400<br>
+              New York, NY 10001<br>
+              <br>
+              Phone: <a href="tel:+15550000000" style="color: #ffffff;">(555) 000-0000</a><br>
+              Email: <a href="mailto:info@example.com" style="color: #ffffff;">info@example.com</a>
+            </address>
+          </div>
 
-        let lastActive = null;
-        let prevOverflow = "";
-        let prevPaddingRight = "";
+          <form action="#" method="POST" class="contact-form" aria-labelledby="contact-heading">
+            <h3 id="contact-heading" class="sr-only" style="display:none;">Contact Form</h3>
+            
+            <div class="form-group">
+              <label for="name">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
+            </div>
 
-        function getFocusable() {
-          return Array.from(menu.querySelectorAll(FOCUSABLE)).filter(
-            (el) => el.offsetParent !== null
-          );
-        }
+            <div class="form-group">
+              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+            </div>
 
-        function setIcons(open) {
-          if (!iconMenu || !iconClose) return;
-          iconMenu.classList.toggle("hidden", open);
-          iconClose.classList.toggle("hidden", !open);
-        }
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
 
-        function setScrollLock(lock) {
-          if (lock) {
-            prevOverflow = document.body.style.overflow;
-            prevPaddingRight = document.body.style.paddingRight;
+            <div class="form-group">
+              <label for="message">Brief Description of Case <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+            </div>
 
-            const scrollbarWidth =
-              window.innerWidth - document.documentElement.clientWidth;
-            if (scrollbarWidth > 0) {
-              document.body.style.paddingRight = scrollbarWidth + "px";
-            }
+            <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Message</button>
+            <p style="font-size: 0.75rem; margin-top: 1rem; color: #94a3b8;">By submitting this form, you agree to our privacy policy. This form does not establish an attorney-client relationship.</p>
+          </form>
+        
+        </div>
+      </div>
+    </section>
 
-            document.body.style.overflow = "hidden";
-          } else {
-            document.body.style.overflow = prevOverflow || "";
-            document.body.style.paddingRight = prevPaddingRight || "";
-          }
-        }
+  </main>
 
-        function setBackgroundInert(isInert) {
-          const main = document.getElementById("main-content");
-          const footer = document.querySelector("footer");
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <a href="#" class="logo" style="font-size: 1.5rem; margin-bottom: 1rem; display: block;">Justice <span>&amp;</span> Partners</a>
+          <p>Unrelenting advocacy. Proven results.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#practice-areas">Services</a></li>
+            <li><a href="#attorneys">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="disclaimer">
+        <p><strong>Attorney Advertising.</strong> The information presented at this site should not be construed to be formal legal advice nor the formation of a lawyer/client relationship. Past results do not guarantee future outcomes.</p>
+        <p style="margin-top: 1rem;">&copy; <span id="year">2024</span> Justice &amp; Partners, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-          [main, footer].forEach((node) => {
-            if (!node) return;
-            if ("inert" in node) node.inert = isInert;
-            node.setAttribute("aria-hidden", isInert ? "true" : "false");
-          });
-        }
+  <script>
+    // ⚠️ SECURITY NOTE: Inline script requires 'unsafe-inline' in CSP
+    // Functionality limited to UI enhancement only
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Dynamic Year
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-        function isOpen() {
-          return menu.classList.contains("is-open");
-        }
-
-        function openMenu() {
-          if (isOpen()) return;
-
-          lastActive = document.activeElement;
-
-          menu.classList.add("is-open");
-          backdrop.classList.add("is-open");
-
-          menu.setAttribute("aria-hidden", "false");
-          btn.setAttribute("aria-expanded", "true");
-          btn.setAttribute("aria-label", "Close menu");
-
-          setIcons(true);
-          setScrollLock(true);
-          setBackgroundInert(true);
-
-          const focusable = getFocusable();
-          requestAnimationFrame(() => (focusable[0] || menu).focus());
-        }
-
-        function closeMenu() {
-          if (!isOpen()) return;
-
-          menu.classList.remove("is-open");
-          backdrop.classList.remove("is-open");
-
-          menu.setAttribute("aria-hidden", "true");
-          btn.setAttribute("aria-expanded", "false");
-          btn.setAttribute("aria-label", "Open menu");
-
-          setIcons(false);
-          setScrollLock(false);
-          setBackgroundInert(false);
-
-          if (lastActive && typeof lastActive.focus === "function") lastActive.focus();
-          else btn.focus();
-        }
-
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          isOpen() ? closeMenu() : openMenu();
+      // 2. Mobile Menu Toggle
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav-links');
+      
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', !isExpanded);
+          nav.classList.toggle('active');
         });
+      }
 
-        backdrop.addEventListener("click", closeMenu);
-
-        // Close on link click inside menu
-        menu.addEventListener("click", (e) => {
-          const a = e.target.closest("a[href]");
-          if (a) closeMenu();
-        });
-
-        // Escape + focus trap
-        document.addEventListener("keydown", (e) => {
-          if (!isOpen()) return;
-
-          if (e.key === "Escape") {
-            e.preventDefault();
-            closeMenu();
-            return;
-          }
-
-          if (e.key === "Tab") {
-            const focusable = getFocusable();
-            if (focusable.length === 0) return;
-
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-
-            if (e.shiftKey && document.activeElement === first) {
-              e.preventDefault();
-              last.focus();
-            } else if (!e.shiftKey && document.activeElement === last) {
-              e.preventDefault();
-              first.focus();
-            }
-          }
-        });
-
-        // Close when switching to desktop
-        window.addEventListener("resize", () => {
-          if (isOpen() && window.matchMedia("(min-width: 768px)").matches) closeMenu();
-        });
-      })();
-    </script>
-  </body>
+      // 3. Close mobile menu when clicking a link
+      nav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          nav.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
+</body>
 </html>
